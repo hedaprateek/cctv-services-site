@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CCTV supply, installation and service, with the electrical, conduit and fitting work that goes with it. Also computer, laptop and printer repair, and sales of new and second-hand peripherals.">
+<meta name="theme-color" content="#0E1519">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CCTV installation, electrical work &amp; computer service">
+<meta property="og:description" content="Cameras fitted properly, including the wiring, power points and earthing most camera fitters leave for someone else.">
+<meta property="og:url" content="https://hedaprateek.github.io/cctv-services-site/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E1519'/%3E%3Cpath d='M6 12.5l13-3.2 1.5 5.6-13 3.2z' fill='%23B9C8CF'/%3E%3Cpath d='M21 11.6l4.6-2.2 1.9 7.2-5-.6z' fill='%236A7C85'/%3E%3Crect x='9' y='19' width='2.4' height='5' rx='.6' fill='%236A7C85'/%3E%3Ccircle cx='24.5' cy='23' r='2.6' fill='%23E24A38'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light dark}</style>
+<title>CCTV Installation, Electrical Work &amp; Computer Repair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================================================
+   TOKENS
+   Light palette lives on bare :root. Dark redefines tokens only.
+   ========================================================================== */
+:root{
+  --ink:#0E1519;
+  --ink-2:#33424B;
+  --ink-3:#6B7C86;
+  --paper:#EEF1F2;
+  --surface:#FFFFFF;
+  --surface-2:#F7F9FA;
+  --line:#D5DCE0;
+  --line-strong:#B6C2C9;
+  --accent:#C4362A;
+  --accent-ink:#FFFFFF;
+  --accent-soft:rgba(196,54,42,.09);
+  --signal:#96631A;
+  --signal-soft:rgba(184,121,28,.12);
+
+  /* Inverted surfaces (contact block, setup strip, sheet header, toast).
+     Defined per theme so no component needs a theme-specific selector. */
+  --invert-bg:#0E1519;
+  --invert-fg:#F1F4F5;
+  --invert-fg-2:rgba(241,244,245,.74);
+  --invert-fg-3:rgba(241,244,245,.5);
+  --invert-line:rgba(241,244,245,.17);
+  --invert-edge:transparent;
+
+  /* The monitor wall is a screen: it holds its own colours in both themes. */
+  --feed:#070C0F;
+  --feed-2:#0D151A;
+  --feed-ink:#B9C8CF;
+  --feed-ink-dim:#6A7C85;
+  --feed-rec:#E24A38;
+
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --display:"Archivo","Archivo Black",-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+
+  --r:4px;
+  --shadow:0 1px 2px rgba(14,21,25,.05),0 8px 24px -12px rgba(14,21,25,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E6ECEF;
+    --ink-2:#AEBCC4;
+    --ink-3:#7E8F99;
+    --paper:#0B1114;
+    --surface:#121B20;
+    --surface-2:#17222A;
+    --line:#23323A;
+    --line-strong:#35474F;
+    --accent:#F0563F;
+    --accent-ink:#150707;
+    --accent-soft:rgba(240,86,63,.13);
+    --signal:#E0A63F;
+    --signal-soft:rgba(224,166,63,.13);
+    --invert-bg:#17222A;
+    --invert-fg:#E6ECEF;
+    --invert-fg-2:#AEBCC4;
+    --invert-fg-3:#7E8F99;
+    --invert-line:#2A3A43;
+    --invert-edge:#23323A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E6ECEF;
+  --ink-2:#AEBCC4;
+  --ink-3:#7E8F99;
+  --paper:#0B1114;
+  --surface:#121B20;
+  --surface-2:#17222A;
+  --line:#23323A;
+  --line-strong:#35474F;
+  --accent:#F0563F;
+  --accent-ink:#150707;
+  --accent-soft:rgba(240,86,63,.13);
+  --signal:#E0A63F;
+  --signal-soft:rgba(224,166,63,.13);
+  --invert-bg:#17222A;
+  --invert-fg:#E6ECEF;
+  --invert-fg-2:#AEBCC4;
+  --invert-fg-3:#7E8F99;
+  --invert-line:#2A3A43;
+  --invert-edge:#23323A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:var(--display);
+  font-weight:800;
+  font-stretch:110%;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  text-wrap:balance;
+  margin:0;
+}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{width:min(1120px,100% - 2.75rem);margin-inline:auto}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.69rem;
+  font-weight:500;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0;
+}
+.eyebrow.muted{color:var(--ink-3)}
+
+.lede{
+  font-size:1.06rem;
+  color:var(--ink-2);
+  max-width:62ch;
+}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.01em}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* Unfilled template values */
+.ph{
+  color:var(--signal);
+  background:var(--signal-soft);
+  padding:0 .28em;
+  border-radius:2px;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+
+/* ============================================================================
+   SETUP STRIP  — delete this block (and #setup in the HTML) once filled in
+   ========================================================================== */
+#setup{
+  background:var(--invert-bg);
+  color:var(--invert-fg);
+  font-family:var(--mono);
+  font-size:.76rem;
+  border-bottom:1px solid var(--invert-edge);
+}
+#setup .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.1rem;padding:.7rem 0}
+#setup b{font-weight:500;color:var(--signal);letter-spacing:.1em;text-transform:uppercase;font-size:.68rem}
+#setup ul{display:flex;flex-wrap:wrap;gap:.35rem .95rem;list-style:none;margin:0;padding:0;opacity:.85}
+#setup li::before{content:"· ";opacity:.5}
+#setup button{
+  margin-left:auto;background:none;border:1px solid currentColor;color:inherit;
+  font:inherit;padding:.15rem .55rem;border-radius:2px;cursor:pointer;opacity:.7;
+}
+#setup button:hover{opacity:1}
+
+/* ============================================================================
+   HEADER
+   ========================================================================== */
+header.site{
+  position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+header.site .wrap{display:flex;align-items:center;gap:1.5rem;height:66px}
+.brand{display:flex;flex-direction:column;line-height:1.15;text-decoration:none;min-width:0}
+.brand .nm{font-family:var(--display);font-weight:800;font-stretch:118%;font-size:1.02rem;letter-spacing:-.01em}
+.brand .sub{font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+nav.top{display:flex;gap:1.35rem;margin-left:auto;font-size:.88rem}
+nav.top a{color:var(--ink-2);text-decoration:none;padding-block:.35rem;border-bottom:1.5px solid transparent}
+nav.top a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+@media (max-width:860px){nav.top{display:none}}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.02em;
+  padding:.6rem 1rem;border-radius:var(--r);text-decoration:none;
+  border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .12s ease,background .15s ease,border-color .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:color-mix(in srgb,var(--accent) 86%,#000)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--ink-3)}
+.btn-lg{padding:.8rem 1.25rem;font-size:.86rem}
+header.site .btn{margin-left:auto}
+@media (max-width:860px){header.site .btn{margin-left:auto}}
+@media (max-width:520px){header.site .btn span.lbl{display:none}}
+
+/* ============================================================================
+   HERO
+   ========================================================================== */
+.hero{padding:3.75rem 0 3.25rem}
+.hero .grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:3.25rem;
+  align-items:center;
+}
+@media (max-width:940px){
+  .hero{padding:2.75rem 0 2.5rem}
+  .hero .grid{grid-template-columns:1fr;gap:2.25rem}
+}
+.hero h1{
+  font-size:clamp(2.3rem,5.1vw,3.6rem);
+  font-stretch:106%;
+  letter-spacing:-.032em;
+  margin:1.1rem 0 1.1rem;
+}
+.hero .lede{font-size:1.09rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.9rem}
+.hero .jump{
+  font-family:var(--mono);font-size:.79rem;color:var(--ink-2);
+  text-decoration:none;border-bottom:1px dashed var(--line-strong);
+  align-self:center;padding-bottom:2px;
+}
+.hero .jump:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.trust{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--line);margin-top:3.25rem;
+}
+.trust div{padding:1.1rem 1.25rem 0 0}
+.trust dt{
+  font-family:var(--display);font-weight:800;font-stretch:112%;
+  font-size:1.35rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+}
+.trust dd{margin:.15rem 0 0;font-family:var(--mono);font-size:.71rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);line-height:1.45}
+@media (max-width:760px){.trust{grid-template-columns:1fr 1fr;gap:0 0}}
+
+/* ============================================================================
+   MONITOR WALL
+   ========================================================================== */
+.wall{
+  background:var(--feed);
+  border:1px solid var(--line-strong);
+  border-radius:var(--r);
+  padding:8px;
+  box-shadow:var(--shadow);
+}
+.wall-bar{
+  display:flex;align-items:center;gap:.6rem;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--feed-ink-dim);padding:.1rem .25rem .55rem;
+}
+.wall-bar .rec{margin-left:auto;color:var(--feed-rec);display:flex;align-items:center;gap:.4rem}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.dot.blink{animation:blink 1.9s steps(1,end) infinite}
+@keyframes blink{0%,62%{opacity:1}63%,100%{opacity:.15}}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tile{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:var(--feed-2);
+  isolation:isolate;
+}
+/* Each tile suggests a scene with gradients only — no claimed footage. */
+.tile::before{content:"";position:absolute;inset:0;z-index:0}
+.tile::after{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(0,0,0,.62) 100%)}
+
+/* 01 gate, IR monochrome, pool of light at the bottom */
+.t1::before{
+  background:
+    radial-gradient(58% 40% at 50% 92%,rgba(196,214,222,.30),transparent 72%),
+    linear-gradient(#0A1216,#060A0D 70%);
+}
+/* 02 shop floor, shutter slats */
+.t2::before{
+  background:
+    repeating-linear-gradient(90deg,rgba(178,196,205,.09) 0 3px,transparent 3px 13px),
+    radial-gradient(70% 55% at 62% 25%,rgba(210,196,168,.20),transparent 70%),
+    linear-gradient(#0C1418,#070C0F);
+}
+/* 03 back lane, single lamp */
+.t3::before{
+  background:
+    radial-gradient(26% 34% at 22% 22%,rgba(224,214,186,.34),transparent 70%),
+    linear-gradient(200deg,rgba(150,172,182,.10),transparent 55%),
+    linear-gradient(#080E12,#05090B);
+}
+/* 04 godown, perspective floor */
+.t4::before{
+  background:
+    linear-gradient(to top,rgba(160,180,190,.16) 0 1px,transparent 1px 100%) bottom/100% 34%,
+    repeating-linear-gradient(78deg,rgba(160,180,190,.07) 0 1px,transparent 1px 26px),
+    linear-gradient(#0B1317,#060B0E);
+}
+.tile .hud{position:absolute;inset:0;z-index:2;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--feed-ink)}
+.tile .hud .id{position:absolute;top:7px;left:8px;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.tile .hud .res{position:absolute;top:7px;right:8px;color:var(--feed-ink-dim)}
+.tile .hud .ts{position:absolute;bottom:6px;left:8px;font-variant-numeric:tabular-nums;
+  color:var(--feed-ink-dim);text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.tile .hud .flag{position:absolute;bottom:6px;right:8px;color:var(--feed-rec)}
+.tile .brk{position:absolute;z-index:2;width:13px;height:13px;border:1px solid rgba(185,200,207,.4)}
+.tile .brk.tl{top:5px;left:5px;border-right:0;border-bottom:0}
+.tile .brk.br{bottom:5px;right:5px;border-left:0;border-top:0}
+.scan{
+  position:absolute;left:0;right:0;height:38%;z-index:2;pointer-events:none;
+  background:linear-gradient(transparent,rgba(200,220,230,.055),transparent);
+  animation:scan 7.5s linear infinite;
+}
+@keyframes scan{from{transform:translateY(-110%)}to{transform:translateY(360%)}}
+.wall-foot{
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--feed-ink-dim);padding:.6rem .25rem .1rem;
+}
+@media (prefers-reduced-motion:reduce){
+  .scan{display:none}
+  .dot.blink{animation:none}
+}
+
+/* ============================================================================
+   SECTIONS
+   ========================================================================== */
+section{scroll-margin-top:78px}
+.band{border-top:1px solid var(--line);padding:4.25rem 0}
+.band.tint{background:var(--surface-2)}
+.sec-head{max-width:64ch;margin-bottom:2.5rem}
+.sec-head h2{font-size:clamp(1.75rem,3.3vw,2.4rem);margin:.7rem 0 .8rem}
+.sec-head p{color:var(--ink-2)}
+
+/* spec table — the CCTV list reads like a quote sheet, not a card deck */
+.spec{border-top:1px solid var(--line)}
+.spec-row{
+  display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr) minmax(0,15rem);
+  gap:1rem 2rem;padding:1.35rem 0;border-bottom:1px solid var(--line);
+  align-items:baseline;
+}
+.spec-row h3{font-size:1.02rem;font-stretch:113%;font-weight:700;letter-spacing:-.01em}
+.spec-row p{color:var(--ink-2);font-size:.94rem}
+.spec-row .sp{
+  font-family:var(--mono);font-size:.74rem;line-height:1.6;color:var(--ink-3);
+  letter-spacing:.01em;
+}
+.spec-row .sp b{color:var(--ink-2);font-weight:500}
+@media (max-width:880px){
+  .spec-row{grid-template-columns:1fr;gap:.4rem;padding:1.15rem 0}
+  .spec-row .sp{padding-top:.15rem}
+}
+.spec-note{
+  margin-top:1.5rem;font-size:.9rem;color:var(--ink-3);
+  padding-left:1rem;border-left:2px solid var(--accent);
+}
+
+/* electrical — the differentiator, given a lifted panel */
+.elec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:3rem;align-items:start}
+@media (max-width:900px){.elec{grid-template-columns:1fr;gap:2rem}}
+.elec ul{list-style:none;margin:0;padding:0;display:grid;gap:.05rem}
+.elec li{
+  display:grid;grid-template-columns:2.6rem 1fr;gap:.35rem;
+  padding:.85rem 0;border-bottom:1px solid var(--line);align-items:baseline;
+}
+.elec li:first-child{border-top:1px solid var(--line)}
+.elec li i{
+  font-style:normal;font-family:var(--mono);font-size:.68rem;color:var(--accent);
+  letter-spacing:.06em;
+}
+.elec li span{font-size:.95rem}
+.elec li em{font-style:normal;color:var(--ink-3);display:block;font-size:.85rem;margin-top:.1rem}
+.pull{
+  background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:var(--r);padding:1.4rem 1.5rem;box-shadow:var(--shadow);
+}
+.pull h3{font-size:1.15rem;margin-bottom:.55rem;font-stretch:114%}
+.pull p{color:var(--ink-2);font-size:.95rem}
+.pull .mono{display:block;margin-top:1rem;color:var(--ink-3);font-size:.74rem;
+  letter-spacing:.1em;text-transform:uppercase}
+
+/* process — numbered because it genuinely is a sequence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-strong)}
+.steps li{list-style:none;padding:1.5rem 1.5rem 1.5rem 0;border-right:1px solid var(--line)}
+.steps li:last-child{border-right:0;padding-right:0}
+@media (max-width:900px){
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li{border-right:0;border-bottom:1px solid var(--line);padding-right:1.25rem}
+}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps .n{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--accent);
+  display:block;margin-bottom:.75rem;
+}
+.steps h3{font-size:1rem;font-stretch:113%;margin-bottom:.4rem}
+.steps p{font-size:.9rem;color:var(--ink-2)}
+.after-steps{
+  margin-top:1.75rem;font-size:.92rem;color:var(--ink-2);
+  display:flex;gap:.75rem;align-items:baseline;flex-wrap:wrap;
+}
+.after-steps .tag{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);border:1px solid var(--line-strong);padding:.15rem .5rem;border-radius:2px;
+}
+
+/* requirement builder */
+.builder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:2.5rem;align-items:start}
+@media (max-width:900px){.builder{grid-template-columns:1fr;gap:2rem}}
+.field{margin-bottom:1.6rem}
+.field>legend,.field>.lab{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:.6rem;padding:0;display:block;
+}
+fieldset.field{border:0;margin-inline:0;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:.4rem}
+.seg label{
+  font-family:var(--mono);font-size:.78rem;padding:.5rem .85rem;cursor:pointer;
+  border:1px solid var(--line-strong);border-radius:var(--r);background:var(--surface);
+  color:var(--ink-2);transition:all .13s ease;
+}
+.seg label:hover{border-color:var(--ink-3)}
+.seg input:checked+span,
+.seg label:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.seg label:has(:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+
+.count{display:flex;align-items:center;gap:1rem}
+.count input[type=range]{flex:1;accent-color:var(--accent);min-width:0}
+.count output{
+  font-family:var(--display);font-weight:800;font-stretch:115%;font-size:1.6rem;
+  font-variant-numeric:tabular-nums;min-width:2.4ch;text-align:right;
+}
+.count .u{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.12em;
+  text-transform:uppercase}
+
+.sheet{
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.sheet .hd{
+  background:var(--invert-bg);color:var(--invert-fg);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.7rem 1.1rem;display:flex;gap:.6rem;align-items:center;
+}
+.sheet dl{margin:0;padding:.35rem 1.1rem .9rem}
+.sheet .r{display:flex;gap:1rem;justify-content:space-between;align-items:baseline;
+  padding:.7rem 0;border-bottom:1px dotted var(--line)}
+.sheet .r:last-of-type{border-bottom:0}
+.sheet dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3)}
+.sheet dd{margin:0;font-family:var(--mono);font-size:.86rem;font-variant-numeric:tabular-nums;
+  text-align:right;color:var(--ink)}
+.sheet dd b{font-weight:500;color:var(--accent)}
+.sheet .foot{padding:0 1.1rem 1.1rem;display:grid;gap:.55rem}
+.sheet .disc{font-size:.78rem;color:var(--ink-3);line-height:1.5;padding:0 1.1rem 1rem;
+  border-top:1px solid var(--line);padding-top:.85rem;margin-top:.2rem}
+
+/* computers + sales, deliberately quieter */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.25rem}
+@media (max-width:880px){.cols{grid-template-columns:1fr 1fr;gap:1.75rem}}
+@media (max-width:560px){.cols{grid-template-columns:1fr}}
+.cols h3{font-size:.98rem;font-stretch:113%;margin-bottom:.55rem;
+  padding-bottom:.55rem;border-bottom:1px solid var(--line-strong)}
+.cols ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.cols li{font-size:.92rem;color:var(--ink-2);padding-left:.95rem;position:relative}
+.cols li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:1px;
+  background:var(--ink-3)}
+
+.sale{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:.5rem}
+@media (max-width:760px){.sale{grid-template-columns:1fr}}
+.sale>div{border:1px solid var(--line);border-radius:var(--r);padding:1.35rem 1.4rem;
+  background:var(--surface)}
+.sale>div.used{background:var(--surface-2);border-style:dashed}
+.sale h3{font-size:1.05rem;font-stretch:114%;margin-bottom:.2rem}
+.sale .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);display:block;margin-bottom:.8rem}
+.sale p{font-size:.93rem;color:var(--ink-2);margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{font-family:var(--mono);font-size:.71rem;padding:.22rem .55rem;border-radius:2px;
+  border:1px solid var(--line-strong);color:var(--ink-2);background:var(--surface)}
+
+/* coverage strip */
+.cover{display:flex;flex-wrap:wrap;gap:.45rem}
+.cover span{font-family:var(--mono);font-size:.76rem;color:var(--ink-2);
+  border:1px solid var(--line);background:var(--surface);padding:.35rem .7rem;border-radius:2px}
+
+/* contact */
+#contact{background:var(--invert-bg);color:var(--invert-fg);border-top:1px solid var(--invert-edge)}
+#contact .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+@media (max-width:880px){#contact .grid{grid-template-columns:1fr;gap:2.25rem}}
+#contact h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin:.7rem 0 .9rem;color:var(--invert-fg)}
+#contact p.lede{color:var(--invert-fg-2)}
+#contact .mono{color:var(--invert-fg-3)}
+#contact .ph{color:var(--signal);background:var(--signal-soft)}
+.reach{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.8rem}
+#contact .btn-ghost{background:transparent;border-color:var(--invert-line);color:var(--invert-fg)}
+#contact .btn-ghost:hover{border-color:var(--invert-fg-3)}
+.tell{border-top:1px solid var(--invert-line);padding-top:1.4rem}
+.tell h3{font-size:.72rem;font-family:var(--mono);font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--signal);margin-bottom:1rem;font-stretch:100%}
+.tell ol{margin:0;padding:0;list-style:none;counter-reset:t;display:grid;gap:.7rem}
+.tell li{counter-increment:t;display:grid;grid-template-columns:2rem 1fr;
+  font-size:.94rem;color:var(--invert-fg-2)}
+.tell li::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:.7rem;
+  color:var(--invert-fg-3);padding-top:.25em}
+
+footer.site{background:var(--paper);border-top:1px solid var(--line);padding:2.25rem 0 2.75rem}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:baseline}
+footer.site .fine{font-size:.82rem;color:var(--ink-3);max-width:52ch}
+footer.site .nm{font-family:var(--display);font-weight:800;font-stretch:116%;font-size:.95rem}
+footer.site .mono{color:var(--ink-3);margin-left:auto}
+
+.toast{
+  position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);
+  background:var(--invert-bg);color:var(--invert-fg);font-family:var(--mono);font-size:.78rem;
+  padding:.65rem 1.1rem;border-radius:var(--r);box-shadow:var(--shadow);z-index:90;
+  border:1px solid var(--invert-edge);
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SETUP STRIP — delete this whole <div id="setup"> block once
+     the CONFIG at the top of the script is filled in.
+     ============================================================ -->
+<div id="setup">
+  <div class="wrap">
+    <b>Template</b>
+    <ul id="setup-list">
+      <li data-k="name">business name</li>
+      <li data-k="city">city</li>
+      <li data-k="area">areas covered</li>
+      <li data-k="phone">phone</li>
+      <li data-k="whatsapp">whatsapp</li>
+      <li data-k="email">email</li>
+      <li data-k="sites">sites done</li>
+      <li data-k="years">years</li>
+      <li data-k="hours">hours</li>
+    </ul>
+    <button type="button" id="setup-hide">hide</button>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="nm"><span data-cfg="name" class="ph">Business name</span></span>
+      <span class="sub">CCTV &middot; Electrical &middot; Computers</span>
+    </a>
+    <nav class="top">
+      <a href="#cctv">CCTV</a>
+      <a href="#electrical">Electrical &amp; fitting</a>
+      <a href="#process">How a job runs</a>
+      <a href="#plan">Plan a system</a>
+      <a href="#computers">Computers</a>
+      <a href="#sales">Sales</a>
+    </nav>
+    <a class="btn btn-primary" data-cfg-href="tel" href="#contact">
+      <span class="lbl">Call</span> <span data-cfg="phone" class="ph">+91 00000 00000</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">CCTV installation &amp; service</p>
+          <h1>Cameras that still hold up at two in the morning.</h1>
+          <p class="lede">
+            Supply, fitting and wiring of every kind of CCTV system &mdash; plus the conduit,
+            power points, earthing and bracket work that goes with it. One team does the cameras
+            <em>and</em> the electrical, so nobody has to call a second person after.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary btn-lg" data-cfg-href="tel" href="#contact">
+              Call <span data-cfg="phone" class="ph">+91 00000 00000</span>
+            </a>
+            <a class="btn btn-ghost btn-lg" data-cfg-href="wa" href="#contact" target="_blank" rel="noopener">
+              WhatsApp a photo of the site
+            </a>
+            <a class="jump" href="#plan">or work out what you need &rarr;</a>
+          </div>
+
+          <!-- Edit or delete any claim below that he doesn't actually offer. -->
+          <dl class="trust">
+            <div>
+              <dt><span data-cfg="sites" class="ph">NN</span>+</dt>
+              <dd>Sites completed</dd>
+            </div>
+            <div>
+              <dt><span data-cfg="years" class="ph">N</span> yrs</dt>
+              <dd>In the trade</dd>
+            </div>
+            <div>
+              <dt>Free</dt>
+              <dd>Site survey before any quote</dd>
+            </div>
+            <div>
+              <dt>Brand</dt>
+              <dd>Warranty on all equipment</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Monitor wall: drawn in CSS. Not real footage, and doesn't pretend to be. -->
+        <div class="wall" aria-hidden="true">
+          <div class="wall-bar">
+            <span>Live</span><span>&mdash;</span><span>4 / 16 ch</span>
+            <span class="rec"><span class="dot blink"></span> Rec</span>
+          </div>
+          <div class="tiles">
+            <div class="tile t1">
+              <div class="scan"></div>
+              <span class="brk tl"></span><span class="brk br"></span>
+              <div class="hud">
+                <span class="id">Cam 01 &middot; Main gate</span>
+                <span class="res">5MP</span>
+                <span class="ts" data-clock>--:--:--</span>
+                <span class="flag">IR</span>
+              </div>
+            </div>
+            <div class="tile t2">
+              <div class="scan"></div>
+              <span class="brk tl"></span><span class="brk br"></span>
+              <div class="hud">
+                <span class="id">Cam 02 &middot; Shop floor</span>
+                <span class="res">2MP</span>
+                <span class="ts" data-clock>--:--:--</span>
+              </div>
+            </div>
+            <div class="tile t3">
+              <div class="scan"></div>
+              <span class="brk tl"></span><span class="brk br"></span>
+              <div class="hud">
+                <span class="id">Cam 03 &middot; Back lane</span>
+                <span class="res">5MP</span>
+                <span class="ts" data-clock>--:--:--</span>
+                <span class="flag">IR</span>
+              </div>
+            </div>
+            <div class="tile t4">
+              <div class="scan"></div>
+              <span class="brk tl"></span><span class="brk br"></span>
+              <div class="hud">
+                <span class="id">Cam 04 &middot; Godown</span>
+                <span class="res">4MP</span>
+                <span class="ts" data-clock>--:--:--</span>
+              </div>
+            </div>
+          </div>
+          <div class="wall-foot">Hdd 1 &mdash; healthy &middot; 4 TB &middot; overwrite on full</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CCTV ===================== -->
+  <section id="cctv" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What gets installed</p>
+        <h2>Every system on the market, fitted properly.</h2>
+        <p>
+          Analog or IP, four cameras or forty, a new building or a fifteen-year-old shop with
+          coax already in the walls. The right answer depends on what's already there &mdash;
+          which is what the site survey is for.
+        </p>
+      </div>
+
+      <div class="spec">
+        <div class="spec-row">
+          <h3>HD analog &mdash; HDCVI, TVI, AHD</h3>
+          <p>The economical route, and the one that reuses coax already running through an
+             older building. Same picture quality most people actually need.</p>
+          <p class="sp"><b>2&ndash;5 MP</b> &middot; RG59 coax + DC power<br>4 / 8 / 16 / 32-ch DVR</p>
+        </div>
+        <div class="spec-row">
+          <h3>IP &amp; PoE network cameras</h3>
+          <p>One Cat6 cable carries picture and power both. Sharper detail, easier to extend
+             later, and each camera can be checked individually over the network.</p>
+          <p class="sp"><b>2&ndash;8 MP</b> &middot; Cat6, single run per camera<br>NVR + PoE switch</p>
+        </div>
+        <div class="spec-row">
+          <h3>Outdoor bullet &amp; dome</h3>
+          <p>Weather-sealed housings for gates, compound walls, terraces and parking. Colour
+             night vision available where there's some ambient light to work with.</p>
+          <p class="sp"><b>IP66 / IP67</b> &middot; IR range 20&ndash;80 m<br>Metal body, sun shield, glanded cable entry</p>
+        </div>
+        <div class="spec-row">
+          <h3>PTZ for large open areas</h3>
+          <p>Yards, plots, factory compounds and long approach roads &mdash; one moving camera
+             covering ground that would otherwise need five fixed ones.</p>
+          <p class="sp"><b>Pan / tilt / zoom</b> &middot; 4&times;&ndash;25&times; optical<br>Preset positions and patrol tours set on handover</p>
+        </div>
+        <div class="spec-row">
+          <h3>Recording &amp; storage</h3>
+          <p>Surveillance-grade drives, sized to how many days of footage you actually want to
+             keep. Overwrite is set so the oldest footage goes first and recording never stops.</p>
+          <p class="sp"><b>1&ndash;8 TB</b> surveillance HDD<br>Typically 15&ndash;60 days retention</p>
+        </div>
+        <div class="spec-row">
+          <h3>Mobile &amp; remote viewing</h3>
+          <p>Set up on every phone that needs it before we leave &mdash; live view, playback,
+             clip export and motion alerts, with the router side configured properly.</p>
+          <p class="sp"><b>Phone app + desktop client</b><br>P2P or static IP &middot; multi-user login</p>
+        </div>
+        <div class="spec-row">
+          <h3>Repair, upgrade &amp; shifting</h3>
+          <p>Existing system gone dark, a DVR that won't boot, cameras from a contractor who
+             disappeared. Also adding channels, swapping to higher resolution, and moving a
+             whole system when the shop moves.</p>
+          <p class="sp"><b>Fault-finding on any brand</b><br>Re-cabling &middot; channel expansion &middot; angle correction</p>
+        </div>
+      </div>
+
+      <p class="spec-note">
+        Also fitted alongside: video door phones, intercoms, biometric attendance and
+        access-control locks &mdash; same cabling visit, same team.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== ELECTRICAL ===================== -->
+  <section id="electrical" class="band tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Around the installation</p>
+        <h2>The wiring work most camera fitters leave for someone else.</h2>
+        <p>
+          A camera job is mostly an electrical job. Cable has to get from the corner of a
+          terrace to a recorder two floors down, on a supply that doesn't drop out, through
+          conduit that survives the monsoon. All of that is done here too.
+        </p>
+      </div>
+
+      <div class="elec">
+        <ul>
+          <li><i>01</i><span>Concealed conduit &amp; casing-capping runs
+            <em>Chased into the wall on new construction, surface casing on finished buildings &mdash; not cable stapled along a skirting.</em></span></li>
+          <li><i>02</i><span>Dedicated power point and MCB for the recorder
+            <em>So the DVR isn't sharing a socket with a fridge or a welding point.</em></span></li>
+          <li><i>03</i><span>Earthing and surge protection for outdoor cameras
+            <em>The single most common reason outdoor cameras die in the first season.</em></span></li>
+          <li><i>04</i><span>UPS or inverter backup on the recorder
+            <em>Recording survives a power cut &mdash; which is exactly when it tends to matter.</em></span></li>
+          <li><i>05</i><span>Poles, brackets, junction boxes, weatherproof glanding
+            <em>Fabricated and fitted for gates, boundary walls and open compounds.</em></span></li>
+          <li><i>06</i><span>Cable routing across floors, terraces and boundary walls
+            <em>Including core drilling, terrace crossings and runs to a separate guard room.</em></span></li>
+          <li><i>07</i><span>General electrical repairs on the same visit
+            <em>Loose points, dead sockets and old wiring found while the job is open.</em></span></li>
+        </ul>
+
+        <aside class="pull">
+          <h3>Why it matters who does the wiring</h3>
+          <p>
+            When the cameras and the electrical are split between two people, every later fault
+            turns into an argument about whose side it is. Doing both means one number to call,
+            one person accountable, and no waiting a week for an electrician to come back and
+            finish a job that's already half open.
+          </p>
+          <p style="margin-top:.7rem">
+            It also means the survey accounts for supply and cable routing from the start &mdash;
+            so the quote doesn't grow halfway through the installation.
+          </p>
+          <span class="mono">One team &middot; one quote &middot; one number to call</span>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section id="process" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How a job runs</p>
+        <h2>Survey first. Quote second. No surprises third.</h2>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="n">01 &mdash; Survey</span>
+          <h3>Walk the site</h3>
+          <p>Camera positions marked on the spot, existing wiring and supply checked, blind
+             spots identified. Usually half an hour, and there's no charge for it.</p>
+        </li>
+        <li>
+          <span class="n">02 &mdash; Quote</span>
+          <h3>Written, itemised</h3>
+          <p>Camera by camera: brand, model, resolution, cable, recorder, storage and labour
+             listed separately, so you can see exactly what you're paying for.</p>
+        </li>
+        <li>
+          <span class="n">03 &mdash; Install</span>
+          <h3>Cabling, then cameras</h3>
+          <p>All the cable runs and power work first, then mounting, then the recorder. Most
+             residential and shop jobs finish the same day.</p>
+        </li>
+        <li>
+          <span class="n">04 &mdash; Handover</span>
+          <h3>Set up on your phone</h3>
+          <p>App installed and tested on your device, playback and clip export demonstrated,
+             and angles re-checked once you've seen a night's footage.</p>
+        </li>
+      </ol>
+
+      <p class="after-steps">
+        <span class="tag">Afterwards</span>
+        Annual maintenance contracts for shops, offices and societies &mdash; periodic cleaning,
+        angle correction, drive health checks and priority fault visits.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== BUILDER ===================== -->
+  <section id="plan" class="band tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Requirement builder</p>
+        <h2>Work out roughly what your site needs.</h2>
+        <p>
+          Set the four values below and you'll get the recorder size, storage and cable length
+          the job would need &mdash; ready to send over so the conversation starts from something
+          concrete.
+        </p>
+      </div>
+
+      <div class="builder">
+        <form id="calc" autocomplete="off">
+          <fieldset class="field">
+            <legend>Type of site</legend>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="site" value="Home" class="vh" checked>Home</label>
+              <label><input type="radio" name="site" value="Shop" class="vh">Shop</label>
+              <label><input type="radio" name="site" value="Office" class="vh">Office</label>
+              <label><input type="radio" name="site" value="Godown / factory" class="vh">Godown / factory</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label class="lab" for="cams">How many cameras</label>
+            <div class="count">
+              <input type="range" id="cams" name="cams" min="2" max="32" step="1" value="6">
+              <output for="cams" id="camsOut">6</output>
+              <span class="u">cams</span>
+            </div>
+          </div>
+
+          <fieldset class="field">
+            <legend>Resolution</legend>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="res" value="2" class="vh" checked>2 MP &mdash; 1080p</label>
+              <label><input type="radio" name="res" value="5" class="vh">5 MP</label>
+              <label><input type="radio" name="res" value="8" class="vh">8 MP &mdash; 4K</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field" style="margin-bottom:0">
+            <legend>Recording mode</legend>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="mode" value="24x7" class="vh" checked>24 &times; 7 continuous</label>
+              <label><input type="radio" name="mode" value="motion" class="vh">Motion only</label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="sheet">
+          <div class="hd"><span class="dot" style="background:var(--accent)"></span> Requirement summary</div>
+          <dl>
+            <div class="r"><dt>Recorder</dt><dd id="oRec">&mdash;</dd></div>
+            <div class="r"><dt>Hard disk</dt><dd id="oHdd">&mdash;</dd></div>
+            <div class="r"><dt>Footage kept</dt><dd id="oDays">&mdash;</dd></div>
+            <div class="r"><dt>Cable (approx.)</dt><dd id="oCable">&mdash;</dd></div>
+            <div class="r"><dt>Power</dt><dd id="oPower">&mdash;</dd></div>
+          </dl>
+          <p class="disc">
+            Storage worked out at H.265 compression, continuous recording; motion-only is
+            estimated at about 40% of that. This is a requirement summary, not a quote &mdash;
+            the final list comes after the site survey.
+          </p>
+          <div class="foot">
+            <a class="btn btn-primary" id="sendWa" href="#contact" target="_blank" rel="noopener">Send this on WhatsApp</a>
+            <button class="btn btn-ghost" type="button" id="copyReq">Copy the summary</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPUTERS ===================== -->
+  <section id="computers" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow muted">Also on the bench</p>
+        <h2>Computer, laptop and printer service.</h2>
+        <p>
+          The second half of the workshop. Walk-in repairs for homes and students, and
+          contract servicing for offices and shops with a handful of machines to keep running.
+        </p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>Repairs</h3>
+          <ul>
+            <li>Laptops and desktops &mdash; no power, no display, restarts, overheating</li>
+            <li>Screen, hinge, keyboard and battery replacement</li>
+            <li>Motherboard-level diagnosis, chip-level where it's worth doing</li>
+            <li>Liquid damage cleaning and assessment</li>
+            <li>Dust cleaning, fan service, thermal paste replacement</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Software &amp; setup</h3>
+          <ul>
+            <li>Windows installation and formatting, drivers configured after</li>
+            <li>Data backed up before any format &mdash; asked about first, every time</li>
+            <li>Virus and malware removal</li>
+            <li>Data recovery attempted on failed drives (no guarantee, and you're told so)</li>
+            <li>New machine setup, file transfer from the old one</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Upgrades &amp; peripherals</h3>
+          <ul>
+            <li>SSD and RAM upgrades &mdash; the fix for most &ldquo;slow&rdquo; machines</li>
+            <li>Inkjet and laser printer servicing, head cleaning, cartridge refill</li>
+            <li>Drum, roller and fuser replacement</li>
+            <li>Network printer, scanner and Wi-Fi router setup</li>
+            <li>UPS, keyboard, mouse, monitor and cable faults</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="after-steps">
+        <span class="tag">For offices</span>
+        Quarterly AMC covering every machine and printer on site, with call-out included.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SALES ===================== -->
+  <section id="sales" class="band tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow muted">Sales</p>
+        <h2>New and second-hand, both stated plainly.</h2>
+      </div>
+
+      <div class="sale">
+        <div>
+          <span class="k">New stock</span>
+          <h3>Boxed, with manufacturer warranty</h3>
+          <p>
+            Bought against your requirement rather than pushed off a shelf &mdash; if a cheaper
+            model does the job, that's the one you'll be quoted.
+          </p>
+          <div class="chips">
+            <span class="chip">Cameras</span><span class="chip">DVR / NVR</span>
+            <span class="chip">Surveillance HDD</span><span class="chip">Coax &amp; Cat6</span>
+            <span class="chip">SMPS &amp; PoE switches</span><span class="chip">Monitors</span>
+            <span class="chip">Printers</span><span class="chip">Cartridges</span>
+            <span class="chip">SSD &amp; RAM</span><span class="chip">UPS</span>
+            <span class="chip">Routers</span><span class="chip">Keyboards &amp; mice</span>
+          </div>
+        </div>
+        <div class="used">
+          <span class="k">Second-hand</span>
+          <h3>Tested, cleaned, condition in writing</h3>
+          <p>
+            Every used unit is checked and serviced before it's sold, and its actual condition
+            is written on the bill &mdash; not described as &ldquo;like new&rdquo; and left at that.
+            Old units taken in exchange.
+          </p>
+          <div class="chips">
+            <span class="chip">Laptops &amp; desktops</span><span class="chip">Monitors</span>
+            <span class="chip">Printers</span><span class="chip">Recorders</span>
+            <span class="chip">Peripherals</span><span class="chip">Exchange &amp; buy-back</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.75rem">
+        <p class="eyebrow muted" style="margin-bottom:.9rem">Sites worked on</p>
+        <div class="cover">
+          <span>Independent houses</span><span>Flats &amp; societies</span>
+          <span>Shops &amp; showrooms</span><span>Godowns &amp; factories</span>
+          <span>Offices</span><span>Schools &amp; coaching centres</span>
+          <span>Clinics</span><span>Society gates &amp; parking</span>
+          <span>Farmhouses &amp; plots</span><span>Construction sites</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="band">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Send a photo of the building. That's usually enough to start.</h2>
+          <p class="lede">
+            Serving <span data-cfg="area" class="ph">areas covered</span>. Survey visits are free,
+            and there's no obligation to book anything after one.
+          </p>
+          <div class="reach">
+            <a class="btn btn-primary btn-lg" data-cfg-href="tel" href="#contact">
+              Call <span data-cfg="phone" class="ph">+91 00000 00000</span>
+            </a>
+            <a class="btn btn-ghost btn-lg" data-cfg-href="wa" href="#contact" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost btn-lg" data-cfg-href="mail" href="#contact">
+              <span data-cfg="email" class="ph">email address</span>
+            </a>
+          </div>
+          <p class="mono" style="margin-top:1.6rem">
+            Open <span data-cfg="hours" class="ph">hours</span>
+          </p>
+        </div>
+
+        <div class="tell">
+          <h3>What to tell us</h3>
+          <ol>
+            <li>What kind of site it is, and roughly how big</li>
+            <li>How many cameras, or which spots you want covered</li>
+            <li>Indoor, outdoor, or both</li>
+            <li>Whether there's an existing system or old wiring in place</li>
+            <li>A photo of the front of the building, if you can</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span class="nm"><span data-cfg="name" class="ph">Business name</span></span>
+    <span class="fine">
+      CCTV installation, electrical and fitting work, computer and peripheral service &mdash;
+      <span data-cfg="city" class="ph">city</span>.
+      Equipment carries manufacturer warranty. Final pricing after site survey.
+    </span>
+    <span class="mono">&copy; <span id="yr">2026</span></span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================================
+   FILL THIS IN — it is the only part of the file that needs editing.
+   Leave a value as "" and the page keeps showing a highlighted placeholder.
+   ========================================================================== */
+const CONFIG = {
+  name:     "",   // e.g. "Sharma Security Systems"
+  city:     "",   // e.g. "Indore"
+  area:     "",   // e.g. "Indore, Dewas and Ujjain"
+  phone:    "",   // e.g. "+91 98765 43210"
+  whatsapp: "",   // digits only, with country code: "919876543210"
+  email:    "",   // e.g. "info@example.com"
+  sites:    "",   // number of sites completed, e.g. "180"
+  years:    "",   // years in the trade, e.g. "9"
+  hours:    "",   // e.g. "Mon–Sat, 10 am – 8 pm"
+};
+/* ========================================================================== */
+
+(function () {
+  "use strict";
+
+  /* ---- apply config -------------------------------------------------- */
+  document.querySelectorAll("[data-cfg]").forEach(function (el) {
+    var v = CONFIG[el.dataset.cfg];
+    if (v) { el.textContent = v; el.classList.remove("ph"); }
+  });
+
+  var waDigits = (CONFIG.whatsapp || "").replace(/\D/g, "");
+  document.querySelectorAll("[data-cfg-href]").forEach(function (el) {
+    var k = el.dataset.cfgHref;
+    if (k === "tel" && CONFIG.phone) el.href = "tel:" + CONFIG.phone.replace(/[^\d+]/g, "");
+    if (k === "wa" && waDigits) { el.href = "https://wa.me/" + waDigits; }
+    if (k === "mail" && CONFIG.email) el.href = "mailto:" + CONFIG.email;
+  });
+
+  if (CONFIG.name) {
+    document.title = CONFIG.name + " - CCTV Installation, Electrical & Computer Services" +
+      (CONFIG.city ? ", " + CONFIG.city : "");
+  }
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  /* ---- setup strip ---------------------------------------------------- */
+  var strip = document.getElementById("setup");
+  if (strip) {
+    var missing = 0;
+    strip.querySelectorAll("[data-k]").forEach(function (li) {
+      if (CONFIG[li.dataset.k]) li.remove(); else missing++;
+    });
+    if (!missing) strip.remove();
+    var hide = document.getElementById("setup-hide");
+    if (hide) hide.addEventListener("click", function () { strip.remove(); });
+  }
+
+  /* ---- monitor wall clock --------------------------------------------- */
+  var clocks = document.querySelectorAll("[data-clock]");
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    var d = new Date();
+    var t = pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + "  " +
+            pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+    clocks.forEach(function (c) { c.textContent = t; });
+  }
+  tick();
+  if (!still) setInterval(tick, 1000);
+
+  /* ---- requirement builder -------------------------------------------- */
+  /* GB per camera per day, H.265, continuous. Rough trade figures. */
+  var GB_PER_DAY = { "2": 10, "5": 22, "8": 38 };
+  /* Average cable run per camera, in metres, by site type. */
+  var RUN = { "Home": 20, "Shop": 16, "Office": 24, "Godown / factory": 38 };
+  var CHANNELS = [4, 8, 16, 32];
+  var DISKS = [1, 2, 4, 6, 8, 10];
+  var TARGET_DAYS = 30;
+
+  var form = document.getElementById("calc");
+  var camsIn = document.getElementById("cams");
+  var camsOut = document.getElementById("camsOut");
+  var out = {
+    rec: document.getElementById("oRec"),
+    hdd: document.getElementById("oHdd"),
+    days: document.getElementById("oDays"),
+    cable: document.getElementById("oCable"),
+    power: document.getElementById("oPower")
+  };
+  var waBtn = document.getElementById("sendWa");
+  var copyBtn = document.getElementById("copyReq");
+  var summary = "";
+
+  function picked(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : null;
+  }
+
+  function compute() {
+    var cams = parseInt(camsIn.value, 10);
+    var res = picked("res");
+    var mode = picked("mode");
+    var site = picked("site");
+
+    var perDay = GB_PER_DAY[res] * (mode === "motion" ? 0.4 : 1);
+    var chan = CHANNELS.find(function (c) { return c >= cams; }) || 32;
+    if (cams > 32) chan = 32;
+
+    var needTB = (cams * perDay * TARGET_DAYS) / 1000;
+    var disk = DISKS.find(function (t) { return t >= needTB; }) || DISKS[DISKS.length - 1];
+    var days = Math.round((disk * 1000) / (cams * perDay));
+
+    var metres = Math.round((cams * RUN[site]) / 10) * 10;
+
+    camsOut.textContent = cams;
+    out.rec.textContent = chan + "-channel " + (res === "2" ? "DVR or NVR" : "NVR");
+    out.hdd.textContent = disk + " TB surveillance grade";
+    out.days.innerHTML = "<b>~" + days + " days</b> before overwrite";
+    out.cable.textContent = "~" + metres + " m";
+    out.power.textContent = chan + "-way supply + 1 point at recorder";
+
+    summary =
+      "CCTV enquiry\n" +
+      "Site: " + site + "\n" +
+      "Cameras: " + cams + " (" + res + " MP)\n" +
+      "Recording: " + (mode === "motion" ? "motion only" : "24x7 continuous") + "\n" +
+      "Recorder: " + chan + "-channel\n" +
+      "Storage: " + disk + " TB (about " + days + " days)\n" +
+      "Cable: about " + metres + " m\n" +
+      "Location: \n\n" +
+      "Please share a quote / arrange a site visit.";
+
+    if (waDigits) {
+      waBtn.href = "https://wa.me/" + waDigits + "?text=" + encodeURIComponent(summary);
+    }
+  }
+
+  if (!waDigits) {
+    waBtn.textContent = "Copy the enquiry";
+    waBtn.removeAttribute("target");
+    waBtn.href = "#plan";
+    waBtn.addEventListener("click", function (e) { e.preventDefault(); copy(summary); });
+  }
+
+  function toast(msg) {
+    var t = document.createElement("div");
+    t.className = "toast";
+    t.setAttribute("role", "status");
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 2600);
+  }
+
+  function copy(text) {
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+      ta.remove();
+      toast(ok ? "Summary copied" : "Select the summary above to copy it");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { toast("Summary copied"); }, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  copyBtn.addEventListener("click", function () { copy(summary); });
+  form.addEventListener("input", compute);
+  form.addEventListener("change", compute);
+  compute();
+})();
+</script>
+</body>
+</html>
