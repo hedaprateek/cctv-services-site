@@ -1,7 +1,7 @@
-# CCTV & Computer Services — website
+# CCTV, Electrical & Computer Services — website
 
-A single-page website for a CCTV installation, electrical/fitting and computer service
-business. One file, no build step, no dependencies.
+A six-page website for a CCTV installation, electrical/fitting and computer service
+business. Plain HTML and CSS, no build step, no dependencies, no framework.
 
 **Live:** https://hedaprateek.github.io/cctv-services-site/
 
@@ -9,37 +9,63 @@ business. One file, no build step, no dependencies.
 
 ## Filling in the business details
 
-Everything editable lives in one place. Open `index.html`, scroll to the bottom, and find
-the `CONFIG` block inside the `<script>` tag:
+Open **`assets/config.js`**. That is the only file you need to touch — every page reads
+from it.
 
 ```js
 const CONFIG = {
-  name:     "",   // e.g. "Sharma Security Systems"
-  city:     "",   // e.g. "Indore"
-  area:     "",   // e.g. "Indore, Dewas and Ujjain"
-  phone:    "",   // e.g. "+91 98765 43210"
-  whatsapp: "",   // digits only, with country code: "919876543210"
-  email:    "",   // e.g. "info@example.com"
-  sites:    "",   // number of sites completed, e.g. "180"
-  years:    "",   // years in the trade, e.g. "9"
-  hours:    "",   // e.g. "Mon–Sat, 10 am – 8 pm"
+  name:     "",   // "Sharma Security Systems"
+  city:     "",   // "Indore"
+  area:     "",   // "Indore, Dewas and Ujjain"
+  phone:    "",   // "+91 98765 43210"
+  whatsapp: "",   // "919876543210"  (digits only, country code first)
+  email:    "",   // "info@example.com"
+  address:  "",   // "12 MG Road, Indore"
+  sites:    "",   // "180"
+  years:    "",   // "9"
+  hours:    "",   // "Mon to Sat, 10 am to 8 pm"
 };
 ```
 
-Fill in the values between the quotes. That single change:
+Fill in the values between the quotes and save. That single change:
 
-- replaces every highlighted placeholder on the page,
+- replaces every orange placeholder across all six pages,
 - wires up the Call, WhatsApp and email buttons,
 - makes the requirement builder send a pre-written WhatsApp enquiry,
-- removes the amber "Template" strip at the top of the page automatically.
+- puts the business name into the browser tab title,
+- removes the orange "Template" strip at the top of the site.
 
-Any value left as `""` keeps showing a highlighted placeholder, so nothing silently
-goes blank.
+Any value left as `""` keeps showing a highlighted placeholder, so nothing silently goes
+blank.
 
 ### The `whatsapp` value
 
-Digits only — country code, no `+`, no spaces, no dashes. An Indian number
-`+91 98765 43210` becomes `919876543210`.
+Digits only — country code first, no `+`, no spaces, no dashes.
+`+91 98765 43210` becomes `"919876543210"`.
+
+---
+
+## The pages
+
+| File | Page |
+| --- | --- |
+| `index.html` | Home — hero, the three service doors, why it matters, coverage |
+| `cctv.html` | CCTV installation, camera types, storage, and how a job runs |
+| `electrical.html` | Conduit, points, earthing, backup, brackets, standalone electrical work |
+| `computers.html` | Repairs, formatting, upgrades, printers, office AMC |
+| `sales.html` | New and second-hand equipment, supply-only and exchange |
+| `contact.html` | Contact details, what to tell us, and the requirement builder |
+
+Shared files:
+
+| File | What it is |
+| --- | --- |
+| `assets/config.js` | **The one file to edit.** Business details. |
+| `assets/site.css` | All the styling — colours, type, layout, light and dark. |
+| `assets/site.js` | Shared behaviour. You shouldn't need to change this. |
+
+To change the look site-wide, edit the colour values at the top of `assets/site.css`.
+Everything else is built from those tokens.
 
 ---
 
@@ -48,61 +74,52 @@ Digits only — country code, no `+`, no spaces, no dashes. An Indian number
 Two bits of content are assumptions, not facts. Both are marked with an HTML comment in
 the source — edit or delete anything that isn't accurate:
 
-1. **The hero trust strip** claims a *free site survey* and *brand warranty on all
+1. **The home page stats strip** claims a *free site survey* and *brand warranty on all
    equipment*.
-2. **The process section** mentions *annual maintenance contracts* and same-day
-   completion on most residential and shop jobs.
+2. **`cctv.html`** mentions *annual maintenance contracts* and same-day completion on most
+   home and shop jobs.
 
-There is deliberately **no pricing anywhere on the page** — every quote is described as
+There is deliberately **no pricing anywhere on the site** — every quote is described as
 following a site survey.
 
 ### Search visibility
 
-Once the business name and city are known, update these three things for local search:
+Once the business name and city are known, update the `<title>` and
+`<meta name="description">` near the top of each page to include them — local search
+depends heavily on that. Each page already has its own title and description, so each
+service can rank on its own.
 
-- the `<title>` on line 14 — put the business name and city in it
-- the `<meta name="description">` on line 6
-- the `og:title` / `og:description` tags — these are what show as the preview card when
-  the link is shared on WhatsApp
+The `og:title` and `og:description` tags are what show as the preview card when the link
+is shared on WhatsApp.
 
 ---
 
 ## Publishing changes
 
-The site is served by GitHub Pages from the `main` branch. Any push republishes it,
-usually within a minute:
+GitHub Pages serves the site from the `main` branch. Any push republishes it, usually
+within a minute:
 
 ```bash
-git add index.html
+git add -A
 git commit -m "Add business details"
 git push
 ```
 
 ## Using a custom domain later
 
-Buy the domain, then add a file named `CNAME` at the root of this repo containing just
-the domain (e.g. `example.com`), point the domain's DNS at GitHub Pages, and set the
-custom domain under **Settings → Pages** in this repository.
+Buy the domain, add a file named `CNAME` at the root of this repo containing just the
+domain (e.g. `example.com`), point the domain's DNS at GitHub Pages, then set the custom
+domain under **Settings → Pages**.
 
 ---
 
-## What's in the page
+## Notes on the build
 
-| Section | Notes |
-| --- | --- |
-| Hero | Monitor wall drawn entirely in CSS — no images, no stock photos, nothing that claims to be real footage |
-| CCTV | Analog, IP/PoE, outdoor, PTZ, storage, remote viewing, repair of existing systems |
-| Electrical & fitting | The differentiator — conduit, power points, earthing, UPS backup, brackets |
-| How a job runs | Survey → quote → install → handover |
-| Requirement builder | Interactive: works out recorder channels, disk size, retention days and cable length, then drafts a WhatsApp enquiry |
-| Computers | Repairs, formatting, upgrades, printers |
-| Sales | New and second-hand, listed separately |
-| Contact | Call / WhatsApp / email, and what a customer should send |
-
-The requirement builder's storage maths uses H.265 continuous recording at roughly
-10 GB, 22 GB and 38 GB per camera per day for 2 MP, 5 MP and 8 MP respectively;
-motion-only recording is estimated at 40% of that. Adjust the `GB_PER_DAY` and `RUN`
-tables in the script if his real-world figures differ.
-
-The page supports light and dark automatically, following the visitor's phone or
-computer setting.
+- The camera grid on the home page is drawn entirely in CSS. There are no images anywhere
+  on the site, and nothing on it claims to be real footage.
+- The requirement builder's storage maths uses H.265 continuous recording at roughly
+  10 GB, 22 GB and 38 GB per camera per day for 2 MP, 5 MP and 8 MP. Motion-only is
+  estimated at 40% of that. Adjust the `GB_PER_DAY` and `RUN` tables in `assets/site.js`
+  if his real-world figures differ.
+- Light and dark themes both follow the visitor's phone or computer setting.
+- Fonts are Bricolage Grotesque, Figtree and IBM Plex Mono, loaded from Google Fonts.
