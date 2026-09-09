@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Six colour directions for the site, each rendered on the real header, hero, buttons and cards.">
+<meta name="theme-color" content="#0B5FFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B5FFF'/%3E%3Cpath d='M5 12.6l13.2-3.3 1.6 5.8-13.2 3.3z' fill='%23fff'/%3E%3Cpath d='M20.4 11.7l4.8-2.3 2 7.5-5.2-.7z' fill='%23BFD6FF'/%3E%3Crect x='8' y='19.4' width='2.4' height='5' rx='.7' fill='%23BFD6FF'/%3E%3Ccircle cx='24' cy='23.5' r='3' fill='%23FF6B1A'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light dark}</style>
+<title>CCTV Site Palettes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* ---------- page chrome: neutral, so the specimens carry all the colour ---- */
+:root{
+  --pg:#F6F7F9;
+  --pg-surface:#FFFFFF;
+  --pg-ink:#13161D;
+  --pg-ink-2:#555B6A;
+  --pg-ink-3:#858B9B;
+  --pg-line:#E3E5EC;
+  --pg-accent:#0B5FFF;
+  --pg-shadow:0 1px 2px rgba(19,22,29,.05),0 12px 30px -16px rgba(19,22,29,.3);
+  --display:"Bricolage Grotesque",-apple-system,"Segoe UI",sans-serif;
+  --sans:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --pg:#0B0D13;
+    --pg-surface:#141821;
+    --pg-ink:#ECEEF4;
+    --pg-ink-2:#9AA2B4;
+    --pg-ink-3:#727A8C;
+    --pg-line:#232835;
+    --pg-accent:#7BA3FF;
+    --pg-shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px -18px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --pg:#0B0D13;
+  --pg-surface:#141821;
+  --pg-ink:#ECEEF4;
+  --pg-ink-2:#9AA2B4;
+  --pg-ink-3:#727A8C;
+  --pg-line:#232835;
+  --pg-accent:#7BA3FF;
+  --pg-shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px -18px rgba(0,0,0,.85);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;background:var(--pg);color:var(--pg-ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.05;letter-spacing:-.022em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- masthead ---------- */
+.top{padding:3rem 0 2.25rem}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--pg-accent)}
+.top h1{font-size:clamp(2rem,4.4vw,2.9rem);margin:.75rem 0 .9rem;max-width:20ch}
+.top p{color:var(--pg-ink-2);max-width:66ch;font-size:1.05rem}
+.top .fixed{
+  margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem .85rem;align-items:baseline;
+  border-top:1px solid var(--pg-line);padding-top:1.25rem;
+  font-size:.9rem;color:var(--pg-ink-3);
+}
+.top .fixed b{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--pg-ink-2);font-weight:500}
+
+/* ---------- specimen grid ---------- */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;padding-bottom:1rem}
+@media (max-width:940px){.grid{grid-template-columns:1fr}}
+
+.spec{
+  background:var(--pg-surface);border:1px solid var(--pg-line);border-radius:14px;
+  overflow:hidden;box-shadow:var(--pg-shadow);display:flex;flex-direction:column;
+}
+.spec-hd{padding:1.25rem 1.35rem .9rem;display:flex;align-items:flex-start;gap:.75rem}
+.spec-hd .n{font-family:var(--mono);font-size:.78rem;color:var(--pg-ink-3);padding-top:.3rem;flex:none}
+.spec-hd h2{font-size:1.22rem;flex:1;min-width:0}
+.spec-hd .badge{
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.25rem .55rem;border-radius:999px;flex:none;white-space:nowrap;
+  background:var(--pg-line);color:var(--pg-ink-2);
+}
+.spec-hd .badge.live{background:#12B76A;color:#03291A}
+.spec .why{padding:0 1.35rem 1.1rem;color:var(--pg-ink-2);font-size:.94rem}
+.spec .why em{font-style:normal;color:var(--pg-ink);font-weight:600}
+
+/* ---------- the mock site, built from the theme's own variables ---------- */
+.mock{margin:0 1.35rem;border-radius:10px;overflow:hidden;border:1px solid var(--t-line);
+  background:var(--t-ground)}
+.mock-bar{display:flex;align-items:center;gap:.5rem;padding:.55rem .7rem;
+  background:var(--t-surface);border-bottom:1px solid var(--t-line)}
+.mock-logo{width:20px;height:20px;border-radius:5px;flex:none;
+  background:linear-gradient(140deg,var(--t-band-a),var(--t-band-b))}
+.mock-name{font-family:var(--display);font-weight:800;font-size:.72rem;color:var(--t-ink);letter-spacing:-.01em}
+.mock-nav{margin-left:auto;display:flex;gap:.55rem;font-size:.6rem;color:var(--t-ink-2);font-weight:600}
+.mock-nav .on{color:var(--t-nav-on)}
+.mock-cta{background:var(--t-cta);color:var(--t-cta-ink);font-size:.6rem;font-weight:800;
+  padding:.25rem .55rem;border-radius:4px;flex:none}
+
+.mock-hero{padding:1.3rem 1rem 1.2rem;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--t-band-a),var(--t-band-b));color:var(--t-band-fg)}
+.mock-hero::after{content:"";position:absolute;inset:-50% -20% auto auto;width:55%;aspect-ratio:1;
+  background:radial-gradient(circle,var(--t-glow),transparent 65%);pointer-events:none}
+.mock-eyebrow{position:relative;z-index:1;font-family:var(--mono);font-size:.53rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--t-band-eyebrow)}
+.mock-h1{position:relative;z-index:1;font-family:var(--display);font-weight:800;
+  font-size:1.18rem;line-height:1.08;margin:.4rem 0 .45rem;color:var(--t-band-fg);letter-spacing:-.022em}
+.mock-h1 em{font-style:normal;color:var(--t-band-em)}
+.mock-sub{position:relative;z-index:1;font-size:.66rem;line-height:1.5;color:var(--t-band-fg-2);max-width:34ch}
+.mock-btns{position:relative;z-index:1;display:flex;gap:.4rem;margin-top:.85rem}
+.mock-btn{font-size:.62rem;font-weight:800;padding:.4rem .7rem;border-radius:5px;border:1.5px solid transparent}
+.mock-btn.solid{background:var(--t-cta);color:var(--t-cta-ink);border-color:var(--t-cta)}
+.mock-btn.ghost{color:var(--t-band-fg);border-color:var(--t-band-line)}
+
+.mock-body{padding:.85rem 1rem 1rem;display:grid;gap:.6rem}
+.mock-card{background:var(--t-surface);border:1px solid var(--t-line);border-radius:7px;
+  padding:.65rem .75rem;border-top:3px solid var(--t-card-edge)}
+.mock-card h4{margin:0 0 .2rem;font-family:var(--display);font-weight:800;font-size:.76rem;color:var(--t-ink)}
+.mock-card p{font-size:.63rem;color:var(--t-ink-2);line-height:1.5}
+.mock-chips{display:flex;flex-wrap:wrap;gap:.28rem}
+.mock-chip{font-family:var(--mono);font-size:.55rem;padding:.16rem .48rem;border-radius:999px;
+  background:var(--t-pill-bg);color:var(--t-pill-ink)}
+.mock-row{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.55rem;
+  color:var(--t-ink-2);letter-spacing:.08em;text-transform:uppercase}
+.mock-dot{width:6px;height:6px;border-radius:50%;background:var(--t-ok);flex:none}
+
+/* ---------- palette swatches ---------- */
+.sw{display:flex;gap:.4rem;padding:1.1rem 1.35rem 1.35rem;margin-top:auto;flex-wrap:wrap}
+.sw div{flex:1 1 0;min-width:62px}
+.sw i{display:block;height:30px;border-radius:6px;border:1px solid rgba(128,128,128,.24)}
+.sw span{display:block;font-family:var(--mono);font-size:.58rem;color:var(--pg-ink-3);margin-top:.3rem;
+  letter-spacing:.02em;text-align:center}
+
+/* ---------- closing note ---------- */
+.foot{border-top:1px solid var(--pg-line);margin-top:1.5rem;padding:2rem 0 3.5rem}
+.foot h3{font-size:1.2rem;margin-bottom:.6rem}
+.foot p{color:var(--pg-ink-2);max-width:64ch}
+.foot ul{margin:.9rem 0 0;padding-left:1.1rem;color:var(--pg-ink-2);display:grid;gap:.35rem}
+.foot code{font-family:var(--mono);font-size:.85em;background:var(--pg-line);padding:.1em .4em;border-radius:4px}
+
+/* ---------- back bar (this page only) ---------- */
+.backbar{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:baseline;
+  padding:.7rem max(1.25rem,calc((100% - 1180px) / 2));
+  background:var(--pg-surface);border-bottom:1px solid var(--pg-line);font-size:.85rem;
+}
+.backbar a{color:var(--pg-accent);text-decoration:none;font-weight:600}
+.backbar a:hover{text-decoration:underline}
+.backbar span{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--pg-ink-3);
+}
+</style>
+</head>
+<body>
+<div class="backbar"><a href="index.html">&larr; Back to the site</a><span>Colour options &mdash; not linked from the site, and not shown in search</span></div>
+
+<div class="wrap top">
+  <p class="kicker">Colour directions</p>
+  <h1>Six ways to paint the same site.</h1>
+  <p>
+    Each block below is the real thing &mdash; header bar, hero band, buttons, a service card
+    and the chip row &mdash; rendered in a different palette. Number 1 is what's live right
+    now. Send back the number you want and the whole site changes to match &mdash; it all comes from one block of colour
+    values in a single stylesheet, so switching takes a minute.
+  </p>
+  <p class="fixed">
+    <b>Unchanged either way</b>
+    <span>Six-page structure &middot; all the copy &middot; the requirement builder &middot;
+    light and dark support &middot; the config file</span>
+  </p>
+</div>
+
+<div class="wrap grid">
+
+  <!-- 1 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#0B5FFF; --t-band-b:#0A34B4; --t-band-fg:#FFFFFF; --t-band-fg-2:rgba(255,255,255,.8);
+    --t-band-em:#FFC7A3; --t-band-eyebrow:#9FC0FF; --t-band-line:rgba(255,255,255,.3);
+    --t-glow:rgba(255,255,255,.16);
+    --t-ground:#F5F8FE; --t-surface:#FFFFFF; --t-ink:#0A1330; --t-ink-2:#3E4A70; --t-line:#DCE4F6;
+    --t-cta:#FF6B1A; --t-cta-ink:#0A1330; --t-nav-on:#0B5FFF; --t-card-edge:#0B5FFF;
+    --t-pill-bg:#EAF1FF; --t-pill-ink:#0842B8; --t-ok:#00B368;">
+    <div class="spec-hd">
+      <span class="n">01</span>
+      <h2>Electric Blue &amp; Orange</h2>
+      <span class="badge live">Live now</span>
+    </div>
+    <p class="why">Confident and energetic without shouting. <em>Blue reads as trustworthy,
+      orange does the asking.</em> The safest of the lively options.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#0B5FFF"></i><span>0B5FFF</span></div>
+      <div><i style="background:#0A34B4"></i><span>0A34B4</span></div>
+      <div><i style="background:#FF6B1A"></i><span>FF6B1A</span></div>
+      <div><i style="background:#00B368"></i><span>00B368</span></div>
+      <div><i style="background:#0A1330"></i><span>0A1330</span></div>
+      <div><i style="background:#F5F8FE"></i><span>F5F8FE</span></div>
+    </div>
+  </article>
+
+  <!-- 2 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#141414; --t-band-b:#2B2B28; --t-band-fg:#FFFFFF; --t-band-fg-2:rgba(255,255,255,.72);
+    --t-band-em:#FFD400; --t-band-eyebrow:#FFD400; --t-band-line:rgba(255,212,0,.55);
+    --t-glow:rgba(255,212,0,.16);
+    --t-ground:#F7F6F1; --t-surface:#FFFFFF; --t-ink:#141414; --t-ink-2:#55554D; --t-line:#E0DED3;
+    --t-cta:#FFD400; --t-cta-ink:#141414; --t-nav-on:#141414; --t-card-edge:#FFD400;
+    --t-pill-bg:#FFF6C4; --t-pill-ink:#6B5600; --t-ok:#1A9E4B;">
+    <div class="spec-hd">
+      <span class="n">02</span>
+      <h2>Hi-Vis Yellow &amp; Black</h2>
+      <span class="badge">Boldest</span>
+    </div>
+    <p class="why">Safety-tape yellow on black. <em>Reads instantly as site work and electrical
+      trade</em> &mdash; the most distinctive option here, and the least like everyone else.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#FFD400"></i><span>FFD400</span></div>
+      <div><i style="background:#141414"></i><span>141414</span></div>
+      <div><i style="background:#2B2B28"></i><span>2B2B28</span></div>
+      <div><i style="background:#1A9E4B"></i><span>1A9E4B</span></div>
+      <div><i style="background:#6B5600"></i><span>6B5600</span></div>
+      <div><i style="background:#F7F6F1"></i><span>F7F6F1</span></div>
+    </div>
+  </article>
+
+  <!-- 3 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#046C4E; --t-band-b:#02352A; --t-band-fg:#FFFFFF; --t-band-fg-2:rgba(255,255,255,.78);
+    --t-band-em:#F5CE5A; --t-band-eyebrow:#8FDCBE; --t-band-line:rgba(255,255,255,.3);
+    --t-glow:rgba(245,179,0,.18);
+    --t-ground:#F3F8F5; --t-surface:#FFFFFF; --t-ink:#0C1F18; --t-ink-2:#3F594E; --t-line:#D7E5DE;
+    --t-cta:#F5B300; --t-cta-ink:#1A1200; --t-nav-on:#046C4E; --t-card-edge:#046C4E;
+    --t-pill-bg:#E3F3EA; --t-pill-ink:#04664A; --t-ok:#0B9A63;">
+    <div class="spec-hd">
+      <span class="n">03</span>
+      <h2>Emerald &amp; Gold</h2>
+      <span class="badge">Most reassuring</span>
+    </div>
+    <p class="why">Deep green with a gold call button. <em>Green is the colour of "everything's
+      fine"</em> &mdash; on a security site that's doing useful work. Warmer and calmer than the blue.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#046C4E"></i><span>046C4E</span></div>
+      <div><i style="background:#02352A"></i><span>02352A</span></div>
+      <div><i style="background:#F5B300"></i><span>F5B300</span></div>
+      <div><i style="background:#8FDCBE"></i><span>8FDCBE</span></div>
+      <div><i style="background:#0C1F18"></i><span>0C1F18</span></div>
+      <div><i style="background:#F3F8F5"></i><span>F3F8F5</span></div>
+    </div>
+  </article>
+
+  <!-- 4 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#C81E33; --t-band-b:#75101F; --t-band-fg:#FFFFFF; --t-band-fg-2:rgba(255,255,255,.78);
+    --t-band-em:#FFC9A8; --t-band-eyebrow:#FFB3BC; --t-band-line:rgba(255,255,255,.32);
+    --t-glow:rgba(255,255,255,.18);
+    --t-ground:#F7F6F7; --t-surface:#FFFFFF; --t-ink:#1B1E24; --t-ink-2:#4F5561; --t-line:#E2E1E5;
+    --t-cta:#1B1E24; --t-cta-ink:#FFFFFF; --t-nav-on:#C81E33; --t-card-edge:#C81E33;
+    --t-pill-bg:#FCE8EB; --t-pill-ink:#A3132A; --t-ok:#19A05C;">
+    <div class="spec-hd">
+      <span class="n">04</span>
+      <h2>Crimson &amp; Graphite</h2>
+      <span class="badge">Most urgent</span>
+    </div>
+    <p class="why">The colour of a recording light. <em>Reads as alert and serious</em> &mdash;
+      strong for security, though it leans harder on "something's wrong" than the others.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#C81E33"></i><span>C81E33</span></div>
+      <div><i style="background:#75101F"></i><span>75101F</span></div>
+      <div><i style="background:#1B1E24"></i><span>1B1E24</span></div>
+      <div><i style="background:#FFC9A8"></i><span>FFC9A8</span></div>
+      <div><i style="background:#A3132A"></i><span>A3132A</span></div>
+      <div><i style="background:#F7F6F7"></i><span>F7F6F7</span></div>
+    </div>
+  </article>
+
+  <!-- 5 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#00A0A8; --t-band-b:#00636D; --t-band-fg:#FFFFFF; --t-band-fg-2:rgba(255,255,255,.8);
+    --t-band-em:#FFD9A0; --t-band-eyebrow:#A9EDF0; --t-band-line:rgba(255,255,255,.32);
+    --t-glow:rgba(255,255,255,.2);
+    --t-ground:#FBFAF7; --t-surface:#FFFFFF; --t-ink:#10312F; --t-ink-2:#4A625F; --t-line:#E1E7E5;
+    --t-cta:#FF5C6C; --t-cta-ink:#2A0409; --t-nav-on:#00727A; --t-card-edge:#00A0A8;
+    --t-pill-bg:#E2F5F5; --t-pill-ink:#00727A; --t-ok:#00A86B;">
+    <div class="spec-hd">
+      <span class="n">05</span>
+      <h2>Teal &amp; Coral</h2>
+      <span class="badge">Friendliest</span>
+    </div>
+    <p class="why">Lighter and more approachable. <em>Leans tech-shop rather than construction
+      site</em> &mdash; good if the computer half of the business matters as much as the cameras.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#00A0A8"></i><span>00A0A8</span></div>
+      <div><i style="background:#00636D"></i><span>00636D</span></div>
+      <div><i style="background:#FF5C6C"></i><span>FF5C6C</span></div>
+      <div><i style="background:#FFD9A0"></i><span>FFD9A0</span></div>
+      <div><i style="background:#10312F"></i><span>10312F</span></div>
+      <div><i style="background:#FBFAF7"></i><span>FBFAF7</span></div>
+    </div>
+  </article>
+
+  <!-- 6 ------------------------------------------------------------------ -->
+  <article class="spec" style="
+    --t-band-a:#101820; --t-band-b:#1B2732; --t-band-fg:#F2F7FA; --t-band-fg-2:rgba(242,247,250,.7);
+    --t-band-em:#C6FF4F; --t-band-eyebrow:#C6FF4F; --t-band-line:rgba(198,255,79,.45);
+    --t-glow:rgba(198,255,79,.14);
+    --t-ground:#0D141B; --t-surface:#161F29; --t-ink:#EAF1F6; --t-ink-2:#93A4B3; --t-line:#25313D;
+    --t-cta:#C6FF4F; --t-cta-ink:#0D141B; --t-nav-on:#C6FF4F; --t-card-edge:#C6FF4F;
+    --t-pill-bg:#1E2B18; --t-pill-ink:#C6FF4F; --t-ok:#3DE08A;">
+    <div class="spec-hd">
+      <span class="n">06</span>
+      <h2>Midnight &amp; Lime</h2>
+      <span class="badge">Dark by default</span>
+    </div>
+    <p class="why">Control-room dark for every visitor, not just the ones on dark mode.
+      <em>Strong on a phone at night</em>, and the camera grid looks its best &mdash; but it's a
+      harder read in bright daylight.</p>
+    <div class="mock">
+      <div class="mock-bar">
+        <span class="mock-logo"></span><span class="mock-name">Business name</span>
+        <span class="mock-nav"><span class="on">Home</span><span>CCTV</span><span>Sales</span></span>
+        <span class="mock-cta">Call</span>
+      </div>
+      <div class="mock-hero">
+        <p class="mock-eyebrow">CCTV &middot; Electrical &middot; Computers</p>
+        <p class="mock-h1">Cameras up. Wires hidden. <em>Working before we leave.</em></p>
+        <p class="mock-sub">Supply, fitting and wiring of every kind of CCTV system, plus the electrical work that goes with it.</p>
+        <div class="mock-btns"><span class="mock-btn solid">Call now</span><span class="mock-btn ghost">WhatsApp</span></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-card"><h4>CCTV installation</h4><p>Analog or IP, four cameras or forty. Recorder, storage and the phone app set up before we leave.</p></div>
+        <div class="mock-chips"><span class="mock-chip">Dome &amp; bullet</span><span class="mock-chip">PTZ</span><span class="mock-chip">DVR / NVR</span></div>
+        <div class="mock-row"><span class="mock-dot"></span> Hdd healthy &middot; 4 TB</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div><i style="background:#C6FF4F"></i><span>C6FF4F</span></div>
+      <div><i style="background:#101820"></i><span>101820</span></div>
+      <div><i style="background:#1B2732"></i><span>1B2732</span></div>
+      <div><i style="background:#161F29"></i><span>161F29</span></div>
+      <div><i style="background:#3DE08A"></i><span>3DE08A</span></div>
+      <div><i style="background:#93A4B3"></i><span>93A4B3</span></div>
+    </div>
+  </article>
+
+</div>
+
+<div class="wrap foot">
+  <h3>A few things worth knowing before you pick</h3>
+  <p>
+    Every one of these is checked so the text passes contrast on its own background &mdash;
+    which is why some call buttons carry dark text rather than white. Getting that wrong is
+    the quickest way to lose the one click that matters on a trades site.
+  </p>
+  <ul>
+    <li><b>02 would also change the type</b> &mdash; hi-vis wants a heavier, more condensed headline face to match. The rest keep the current pairing.</li>
+    <li><b>06 turns off light mode entirely</b>, so it looks the same for everyone. The other five follow the visitor's phone setting, light or dark.</li>
+    <li><b>Mixing is fine</b> &mdash; say "03 but with the orange call button" and that works.</li>
+    <li><b>Nothing else changes.</b> The pages, the copy and the requirement builder stay exactly as they are; only the token block at the top of <code>assets/site.css</code> gets swapped.</li>
+  </ul>
+</div>
+</body>
+</html>
