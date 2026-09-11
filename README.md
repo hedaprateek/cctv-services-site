@@ -117,6 +117,16 @@ domain under **Settings → Pages**.
 
 - The camera grid on the home page is drawn entirely in CSS. There are no images anywhere
   on the site, and nothing on it claims to be real footage.
+- **The CCTV animations** are three, and each one shows something a real system does:
+  the camera wall cycles through its channels one at a time; a motion-detection box locks
+  onto movement, tracks it across the frame, then lets go; and the camera on `cctv.html`
+  sweeps its coverage arc with detection rings pulsing outward. All three stop dead under
+  `prefers-reduced-motion`, so nothing moves for a visitor who has asked for that.
+- **Colour tokens are named for their role, not their hue** — `--clay` (brand),
+  `--honey` (the call-to-action accent) and `--ok` (status only). Swapping the palette
+  means changing those values, not hunting for hard-coded colours further down the file.
+- **Green is deliberate.** The healthy-disk status dot stays green in every palette,
+  because it means "fine" — that is the one place a warm colour would read wrong.
 - The requirement builder's storage maths uses H.265 continuous recording at roughly
   10 GB, 22 GB and 38 GB per camera per day for 2 MP, 5 MP and 8 MP. Motion-only is
   estimated at 40% of that. Adjust the `GB_PER_DAY` and `RUN` tables in `assets/site.js`
