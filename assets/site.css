@@ -34,6 +34,12 @@
   --line:#DCE4F6;
   --line-strong:#BFCCE8;
 
+  /* Aliases for the Stunity Tech studio credit. These point at tokens that
+     are themselves redefined per theme, so the credit follows light and dark
+     on its own instead of falling back to a fixed grey. */
+  --muted:var(--ink-3);
+  --line-soft:var(--line);
+
   /* Filled colour bands (hero, CTA strips, footer, setup strip) */
   --band-a:#0B5FFF;
   --band-b:#0A34B4;
