@@ -78,7 +78,7 @@ Everything else is built from those tokens.
 There is a **Theme** button in the bottom-right corner of every page. It offers six
 warm palettes, and your choice is saved in your own browser — it is not saved to the
 site, so visitors always see whatever palette is set as the default in
-`assets/site.css`. Terracotta & Sand is currently that default.
+`assets/site.css`. Amber & Charcoal is currently that default.
 
 `themes.html` still shows all six side by side, which is useful for comparing them at
 a glance rather than one at a time.
@@ -87,7 +87,7 @@ a glance rather than one at a time.
 
 Once a palette is settled on:
 
-1. If it is **not** Terracotta, open `assets/themes.css`, find that palette's block
+1. If it is **not** Amber & Charcoal, open `assets/themes.css`, find that palette's block
    (e.g. `:root[data-palette="copper"]`), and copy its values over the matching token
    names in the `:root` block at the top of `assets/site.css`. Do the same for its dark
    variant.
@@ -150,13 +150,24 @@ domain under **Settings → Pages**.
 
 ## Notes on the build
 
-- The camera grid on the home page is drawn entirely in CSS. There are no images anywhere
-  on the site, and nothing on it claims to be real footage.
-- **The CCTV animations** are three, and each one shows something a real system does:
-  the camera wall cycles through its channels one at a time; a motion-detection box locks
-  onto movement, tracks it across the frame, then lets go; and the camera on `cctv.html`
-  sweeps its coverage arc with detection rings pulsing outward. All three stop dead under
-  `prefers-reduced-motion`, so nothing moves for a visitor who has asked for that.
+- **There are no images anywhere on the site.** Not one. The camera grid on the home page
+  is built from CSS gradients, and the installation scene on `cctv.html` is inline SVG
+  line art drawn in `currentColor`, so it follows whichever palette is active. Nothing on
+  either claims to be real footage.
+- **The CCTV animations** each show something a real system actually does:
+  - the camera wall **cycles through its channels**, one at a time;
+  - a **motion box locks onto** movement, tracks it across the frame, then lets go;
+  - on `cctv.html`, **signal crawls down each cable into the recorder** — a `3 11` dash
+    pattern offset by exactly two periods, which is why the loop has no visible jump —
+    while the coverage cones sway out of phase and the recorder LED blinks on `steps(2)`,
+    because a recorder light blinks rather than fades.
+- **Motion is deliberately restrained.** Two easing curves do all the work: one for
+  anything that reveals or sweeps, one that overshoots slightly, used only on things a
+  finger touches. Looping animations idle through most of their timeline, so the page
+  feels alive without ever looking busy.
+- **All of it stops under `prefers-reduced-motion`**, and the reveal and heading states
+  are explicitly reset there — without that, killing the transitions would strand content
+  at zero opacity or leave headings as transparent outlines.
 - **Colour tokens are named for their role, not their hue** — `--clay` (brand),
   `--honey` (the call-to-action accent) and `--ok` (status only). Swapping the palette
   means changing those values, not hunting for hard-coded colours further down the file.

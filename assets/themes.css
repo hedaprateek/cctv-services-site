@@ -5,25 +5,27 @@
    To remove it once a palette is settled on:
      1. delete this file and assets/theme-switcher.js
      2. delete the two tags they add to each page's <head>
-     3. if the chosen palette is not Terracotta, copy its values into the
-        token block at the top of assets/site.css
+     3. if the chosen palette is not Amber & Charcoal, copy its values into
+        the token block at the top of assets/site.css, and set DEFAULT in
+        theme-switcher.js to match
 
-   Terracotta lives in :root in site.css and stays the default, so every page
-   is correct before any script runs. Each block here overrides only the hue
-   tokens. --ok stays green in every palette, because "healthy" should not be
-   warm. In dark mode all palettes share one warm dark shell and swap hues only.
+   Amber & Charcoal is the default and lives in :root in site.css, so it has
+   no block here: the default deliberately carries no data-palette attribute.
+   Each block below overrides only the hue tokens. --ok stays green in every
+   palette, because "healthy" should not be warm. In dark mode all palettes
+   share the one warm shell from site.css and swap hues only.
    ========================================================================== */
 
-/* ---- 02 Amber & Charcoal ---- */
-:root[data-palette="amber"]{
-  --clay:#B45309; --clay-deep:#8A5A08; --clay-ink:#8A5A08; --clay-soft:#FDF0D9;
-  --honey:#F5A524; --honey-ink:#8A5A08; --honey-soft:#FDF0D9;
-  --ink:#1C1917; --ink-2:#57504A; --ink-3:#7A716A;
-  --paper:#FAF7F2; --surface:#FFFFFF; --surface-2:#F4F0E8;
-  --line:#E7E0D6; --line-strong:#D5CBBB;
-  --band-a:#1C1917; --band-b:#3B322C; --band-em:#F5A524;
-  --band-glow:rgba(245,165,36,.2);
-  --umber:#1C1917; --umber-2:#332C26;
+/* ---- 01 Terracotta & Sand  (the previous default) ---- */
+:root[data-palette="terracotta"]{
+  --clay:#C2410C; --clay-deep:#7C2D12; --clay-ink:#9A3412; --clay-soft:#FDEBE0;
+  --honey:#F59E0B; --honey-ink:#92400E; --honey-soft:#FEF3E2;
+  --ink:#1C1310; --ink-2:#5C4A42; --ink-3:#7D6858;
+  --paper:#FDF6EC; --surface:#FFFFFF; --surface-2:#FAF1E4;
+  --line:#EDDFCF; --line-strong:#DCC7B0;
+  --band-a:#C2410C; --band-b:#7C2D12; --band-em:#FFD9A8;
+  --band-glow:rgba(245,158,11,.24);
+  --umber:#2A1810; --umber-2:#3B2318;
 }
 
 /* ---- 03 Marigold & Deep Red ---- */
@@ -80,11 +82,11 @@
    the other. Only hues change; the warm dark shell comes from site.css.
    ---------------------------------------------------------------------- */
 @media (prefers-color-scheme:dark){
-  :root[data-palette="amber"]:not([data-theme="light"]){
-    --clay:#F5A524; --clay-deep:#D98806; --clay-ink:#FFCF6B; --clay-soft:#3A2A0C;
+  :root[data-palette="terracotta"]:not([data-theme="light"]){
+    --clay:#F97316; --clay-deep:#EA580C; --clay-ink:#FDBA8C; --clay-soft:#3A1C0E;
     --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
-    --band-a:#2A2420; --band-b:#16120F; --band-em:#F5A524;
-    --band-glow:rgba(245,165,36,.18); --umber:#2A2420; --umber-2:#3A322C;
+    --band-a:#7C2D12; --band-b:#3F1A08; --band-em:#FFD9A8;
+    --band-glow:rgba(251,191,36,.2); --umber:#2C1D14; --umber-2:#3B2318;
   }
   :root[data-palette="marigold"]:not([data-theme="light"]){
     --clay:#FB7185; --clay-deep:#E11D48; --clay-ink:#FDA4B8; --clay-soft:#3E0A1A;
@@ -111,11 +113,11 @@
     --band-glow:rgba(252,211,77,.2); --umber:#3B0A0A; --umber-2:#511616;
   }
 }
-:root[data-theme="dark"][data-palette="amber"]{
-  --clay:#F5A524; --clay-deep:#D98806; --clay-ink:#FFCF6B; --clay-soft:#3A2A0C;
+:root[data-theme="dark"][data-palette="terracotta"]{
+  --clay:#F97316; --clay-deep:#EA580C; --clay-ink:#FDBA8C; --clay-soft:#3A1C0E;
   --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
-  --band-a:#2A2420; --band-b:#16120F; --band-em:#F5A524;
-  --band-glow:rgba(245,165,36,.18); --umber:#2A2420; --umber-2:#3A322C;
+  --band-a:#7C2D12; --band-b:#3F1A08; --band-em:#FFD9A8;
+  --band-glow:rgba(251,191,36,.2); --umber:#2C1D14; --umber-2:#3B2318;
 }
 :root[data-theme="dark"][data-palette="marigold"]{
   --clay:#FB7185; --clay-deep:#E11D48; --clay-ink:#FDA4B8; --clay-soft:#3E0A1A;

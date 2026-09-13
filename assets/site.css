@@ -12,30 +12,30 @@
 :root{
   color-scheme:light dark;
 
-  /* Terracotta — the brand hue. Hero bands, links, active states. */
-  --clay:#C2410C;
-  --clay-deep:#7C2D12;
-  --clay-ink:#9A3412;
-  --clay-soft:#FDEBE0;
+  /* Amber & Charcoal — the brand hues. Hero bands, links, active states. */
+  --clay:#B45309;
+  --clay-deep:#8A5A08;
+  --clay-ink:#8A5A08;
+  --clay-soft:#FDF0D9;
 
   /* Honey — the accent that does the asking. Call buttons, highlights. */
-  --honey:#F59E0B;
-  --honey-ink:#92400E;
-  --honey-soft:#FEF3E2;
+  --honey:#F5A524;
+  --honey-ink:#8A5A08;
+  --honey-soft:#FDF0D9;
 
   /* Status only — never decorative. */
   --ok:#15803D;
   --ok-ink:#14532D;
   --ok-soft:#E7F5EC;
 
-  --ink:#1C1310;
-  --ink-2:#5C4A42;
-  --ink-3:#7D6858;
-  --paper:#FDF6EC;
+  --ink:#1C1917;
+  --ink-2:#57504A;
+  --ink-3:#746B64;
+  --paper:#FAF7F2;
   --surface:#FFFFFF;
-  --surface-2:#FAF1E4;
-  --line:#EDDFCF;
-  --line-strong:#DCC7B0;
+  --surface-2:#F4F0E8;
+  --line:#E7E0D6;
+  --line-strong:#D5CBBB;
 
   /* Aliases for the Stunity Tech studio credit. These point at tokens that
      are themselves redefined per theme, so the credit follows light and dark
@@ -44,18 +44,18 @@
   --line-soft:var(--line);
 
   /* Filled colour bands (hero, CTA strips, footer, setup strip) */
-  --band-a:#C2410C;
-  --band-b:#7C2D12;
+  --band-a:#1C1917;
+  --band-b:#3B322C;
   --band-fg:#FFFFFF;
   --band-fg-2:rgba(255,255,255,.85);
   --band-fg-3:rgba(255,255,255,.62);
   --band-line:rgba(255,255,255,.26);
-  --band-glow:rgba(245,158,11,.24);
-  --band-em:#FFD9A8;
+  --band-glow:rgba(245,165,36,.2);
+  --band-em:#F5A524;
 
   /* Warm dark, used wherever a near-black block is needed. */
-  --umber:#2A1810;
-  --umber-2:#3B2318;
+  --umber:#1C1917;
+  --umber-2:#332C26;
 
   /* The camera grid is a screen: it keeps its own warm night palette in
      both themes, the way an IR feed actually looks. */
@@ -77,10 +77,10 @@
 
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --clay:#F97316;
-    --clay-deep:#EA580C;
-    --clay-ink:#FDBA8C;
-    --clay-soft:#3A1C0E;
+    --clay:#F5A524;
+    --clay-deep:#D98806;
+    --clay-ink:#FFCF6B;
+    --clay-soft:#3A2A0C;
 
     --honey:#FBBF24;
     --honey-ink:#FCD34D;
@@ -99,27 +99,27 @@
     --line:#3A2820;
     --line-strong:#52392C;
 
-    --band-a:#7C2D12;
-    --band-b:#3F1A08;
+    --band-a:#2A2420;
+    --band-b:#16120F;
     --band-fg:#FFFFFF;
     --band-fg-2:rgba(255,255,255,.8);
     --band-fg-3:rgba(255,255,255,.58);
     --band-line:rgba(255,255,255,.2);
-    --band-glow:rgba(251,191,36,.2);
-    --band-em:#FFD9A8;
+    --band-glow:rgba(245,165,36,.18);
+    --band-em:#F5A524;
 
-    --umber:#2C1D14;
-    --umber-2:#3B2318;
+    --umber:#2A2420;
+    --umber-2:#3A322C;
 
     --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 30px -16px rgba(0,0,0,.8);
     --shadow-lift:0 2px 8px rgba(0,0,0,.55),0 26px 50px -22px rgba(0,0,0,.9);
   }
 }
 :root[data-theme="dark"]{
-  --clay:#F97316;
-  --clay-deep:#EA580C;
-  --clay-ink:#FDBA8C;
-  --clay-soft:#3A1C0E;
+  --clay:#F5A524;
+  --clay-deep:#D98806;
+  --clay-ink:#FFCF6B;
+  --clay-soft:#3A2A0C;
   --honey:#FBBF24;
   --honey-ink:#FCD34D;
   --honey-soft:#3B2A0C;
@@ -134,16 +134,16 @@
   --surface-2:#2C1D14;
   --line:#3A2820;
   --line-strong:#52392C;
-  --band-a:#7C2D12;
-  --band-b:#3F1A08;
+  --band-a:#2A2420;
+  --band-b:#16120F;
   --band-fg:#FFFFFF;
   --band-fg-2:rgba(255,255,255,.8);
   --band-fg-3:rgba(255,255,255,.58);
   --band-line:rgba(255,255,255,.2);
-  --band-glow:rgba(251,191,36,.2);
-  --band-em:#FFD9A8;
-  --umber:#2C1D14;
-  --umber-2:#3B2318;
+  --band-glow:rgba(245,165,36,.18);
+  --band-em:#F5A524;
+  --umber:#2A2420;
+  --umber-2:#3A322C;
   --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 30px -16px rgba(0,0,0,.8);
   --shadow-lift:0 2px 8px rgba(0,0,0,.55),0 26px 50px -22px rgba(0,0,0,.9);
 }

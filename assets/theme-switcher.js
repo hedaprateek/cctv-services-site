@@ -12,7 +12,9 @@
   "use strict";
 
   var KEY = "cctv-palette";
-  var DEFAULT = "terracotta";
+  /* Must match whichever palette is in the :root block of site.css: the
+     default carries no data-palette attribute at all. */
+  var DEFAULT = "amber";
 
   var PALETTES = [
     { k: "terracotta", label: "Terracotta & Sand",   a: "#C2410C", b: "#F59E0B" },
@@ -38,7 +40,7 @@
 
   /* ---- 1. apply immediately, before first paint ------------------------- */
   function paint(k) {
-    /* Terracotta is the default and lives in :root, so it needs no attribute. */
+    /* Amber is the default and lives in :root, so it needs no attribute. */
     if (k === DEFAULT) document.documentElement.removeAttribute("data-palette");
     else document.documentElement.setAttribute("data-palette", k);
   }
