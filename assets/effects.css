@@ -1,0 +1,207 @@
+/* ============================================================================
+   MOTION LAYER
+
+   Kept in its own file so the colour system in site.css stays readable.
+
+   Two ideas run through everything here:
+     1. Rest beats. Looping animations idle through most of their timeline, so
+        the page feels alive without ever looking busy.
+     2. Two easing curves only. --ease for anything that reveals or sweeps,
+        --ease-spring (which overshoots) for anything a finger touches.
+
+   Everything stops under prefers-reduced-motion — see the last block.
+   ========================================================================== */
+
+:root{
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+}
+
+/* --------------------------------------------------------------------------
+   1. GRAIN
+   A single fixed turbulence layer. Stops the large flat warm areas reading
+   as a default background. Multiplies on light so it darkens rather than
+   washing out; sits under the switcher and toast, over everything else.
+   -------------------------------------------------------------------------- */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:70;
+  opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) body::after{opacity:.05;mix-blend-mode:normal}
+}
+:root[data-theme="dark"] body::after{opacity:.05;mix-blend-mode:normal}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEAL
+   Gated on .js, which effects.js sets on <html> before the body parses. With
+   JS off nothing is ever hidden, so content can't be stranded invisible.
+   The hero is deliberately excluded: the first screen must be there at rest.
+   -------------------------------------------------------------------------- */
+.js .sec-head,
+.js .door,
+.js .card,
+.js .steps>li,
+.js .spec-row,
+.js .checks>li,
+.js .panel,
+.js .reach>a,
+.js .sheet,
+.js #calc,
+.js .note,
+.js .cover,
+.js .sale>div,
+.js .cta-band .inner{
+  opacity:0;transform:translateY(22px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease);
+}
+.js .is-in{opacity:1;transform:none}
+
+/* Children of a revealed group come in behind it, 70ms apart. Set from CSS
+   rather than JS so there is no second pass over the DOM. */
+.js .doors>.door:nth-child(2),
+.js .cards>.card:nth-child(2),
+.js .steps>li:nth-child(2){transition-delay:.07s}
+.js .doors>.door:nth-child(3),
+.js .cards>.card:nth-child(3),
+.js .steps>li:nth-child(3){transition-delay:.14s}
+.js .steps>li:nth-child(4){transition-delay:.21s}
+.js .checks>li:nth-child(2){transition-delay:.05s}
+.js .checks>li:nth-child(3){transition-delay:.1s}
+.js .checks>li:nth-child(4){transition-delay:.15s}
+.js .checks>li:nth-child(5){transition-delay:.2s}
+
+/* --------------------------------------------------------------------------
+   3. PAINTED HEADINGS
+   Section headings arrive as outlines, then a hard-edged gradient paints the
+   fill left to right. The 50% hard stop is what makes it read as a paint
+   rather than a fade. effects.js adds .painted afterwards so the heading
+   ends up as ordinary solid text.
+   -------------------------------------------------------------------------- */
+.js .sec-head h2:not(.painted){
+  color:transparent;
+  -webkit-text-stroke:1px var(--line-strong);
+  background:linear-gradient(90deg,var(--ink) 0 50%,transparent 50%) 100% 0 / 200% 100% no-repeat;
+  -webkit-background-clip:text;background-clip:text;
+  transition:background-position 1.2s var(--ease) .15s;
+}
+.js .sec-head.is-in h2:not(.painted){background-position:0 0}
+/* On a colour band the outline and paint both have to flip to the band's ink. */
+.js .band .sec-head h2:not(.painted){
+  -webkit-text-stroke-color:var(--band-line);
+  background-image:linear-gradient(90deg,var(--band-fg) 0 50%,transparent 50%);
+}
+
+/* --------------------------------------------------------------------------
+   4. SPOTLIGHT EDGE
+   A 1px ring lit where the cursor is, masked to the border only. Coordinates
+   come from effects.js as --mx / --my.
+   -------------------------------------------------------------------------- */
+.spot{position:relative}
+.spot::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  border-radius:inherit;padding:1px;
+  background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),var(--clay),transparent 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s var(--ease);
+}
+.spot:hover::after{opacity:1}
+
+/* --------------------------------------------------------------------------
+   5. TACTILITY
+   Spring easing on the things a finger touches. Magnetic pull on the primary
+   button is applied inline by effects.js; the spring here is what snaps it
+   back when the cursor leaves.
+   -------------------------------------------------------------------------- */
+.btn{transition:transform .35s var(--ease-spring),background .2s,border-color .2s,box-shadow .35s var(--ease);will-change:transform}
+.btn:active{transform:scale(.97)}
+.door,.card,.reach a{transition:transform .35s var(--ease-spring),box-shadow .3s var(--ease),border-color .2s}
+.tsw-btn{transition:transform .35s var(--ease-spring),border-color .2s}
+
+/* --------------------------------------------------------------------------
+   6. THE INSTALLATION SCENE  (cctv.html)
+   An inline SVG elevation: three cameras on a building, coverage cones, and
+   cable runs down to a recorder. No images anywhere.
+   -------------------------------------------------------------------------- */
+.scene{width:100%;height:auto;display:block;overflow:visible}
+.scene-wrap{position:relative;width:min(480px,100%);margin:0 auto}
+
+/* Signal travelling down each cable to the recorder. The dash pattern is
+   3+11 = 14 units and the offset runs to -28, exactly two periods, so the
+   loop is seamless with no visible jump. */
+.scene .sig{
+  stroke-dasharray:3 11;
+  animation:sig 1.4s linear infinite;
+}
+@keyframes sig{to{stroke-dashoffset:-28}}
+
+/* Coverage cones breathe very slowly. The second is given a negative delay
+   so the pair is permanently out of phase without a second keyframe block. */
+.scene .cone{transform-box:fill-box;transform-origin:top center;animation:cone 9s ease-in-out infinite alternate}
+.scene .cone-b{animation-delay:-4.5s}
+.scene .cone-c{animation-delay:-2.2s}
+@keyframes cone{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+
+/* Recorder LED. steps(2) because a recorder light blinks, it does not fade. */
+.scene .led{animation:led 1.8s steps(2) infinite}
+@keyframes led{50%{opacity:.3}}
+
+/* Detection ring, with a long rest so it reads as an event, not a pulse. */
+.scene .ping{transform-box:fill-box;transform-origin:center;animation:ping 4.4s var(--ease) infinite}
+@keyframes ping{
+  0%{transform:scale(.35);opacity:.85}
+  70%,100%{transform:scale(1.9);opacity:0}
+}
+
+/* Floating spec labels beside the scene, counter-phased the same way. */
+.scene-tag{
+  position:absolute;display:flex;align-items:center;gap:.45rem;
+  background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:999px;
+  padding:.34rem .7rem;box-shadow:var(--shadow-lift);
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;
+  animation:bob 6s ease-in-out infinite;white-space:nowrap;
+}
+.scene-tag b{font-weight:500;color:var(--clay-ink)}
+.scene-tag-1{left:-8%;top:26%}
+.scene-tag-2{right:-6%;bottom:14%;animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (max-width:900px){
+  .scene-tag-1{left:0;top:8%}
+  .scene-tag-2{right:0;bottom:6%}
+}
+@media (max-width:560px){
+  .scene-tag{font-size:.58rem;padding:.28rem .55rem}
+}
+
+/* --------------------------------------------------------------------------
+   7. STAT COUNTERS
+   Tabular figures so the number does not jitter in width while counting.
+   -------------------------------------------------------------------------- */
+.stats dt{font-variant-numeric:tabular-nums}
+
+/* --------------------------------------------------------------------------
+   8. REDUCED MOTION
+   Near-zero durations rather than animation:none, so anything whose end state
+   matters still lands there. iteration-count:1 kills the infinite loops. The
+   reveal and heading resets are essential: without them, killing the
+   transition would strand content at opacity 0 or as transparent outlines.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+  html{scroll-behavior:auto}
+  .js .sec-head,.js .door,.js .card,.js .steps>li,.js .spec-row,.js .checks>li,
+  .js .panel,.js .reach>a,.js .sheet,.js #calc,.js .note,.js .cover,
+  .js .sale>div,.js .cta-band .inner{opacity:1;transform:none}
+  .js .sec-head h2:not(.painted){
+    color:var(--ink);-webkit-text-stroke:0;background:none;
+  }
+  .js .band .sec-head h2:not(.painted){color:var(--band-fg)}
+}

@@ -1,0 +1,199 @@
+/* ============================================================================
+   SWITCHABLE PALETTES + THEME SWITCHER  —  TEMPORARY
+
+   This whole file exists so a palette can be chosen by eye on the real site.
+   To remove it once a palette is settled on:
+     1. delete this file and assets/theme-switcher.js
+     2. delete the two tags they add to each page's <head>
+     3. if the chosen palette is not Terracotta, copy its values into the
+        token block at the top of assets/site.css
+
+   Terracotta lives in :root in site.css and stays the default, so every page
+   is correct before any script runs. Each block here overrides only the hue
+   tokens. --ok stays green in every palette, because "healthy" should not be
+   warm. In dark mode all palettes share one warm dark shell and swap hues only.
+   ========================================================================== */
+
+/* ---- 02 Amber & Charcoal ---- */
+:root[data-palette="amber"]{
+  --clay:#B45309; --clay-deep:#8A5A08; --clay-ink:#8A5A08; --clay-soft:#FDF0D9;
+  --honey:#F5A524; --honey-ink:#8A5A08; --honey-soft:#FDF0D9;
+  --ink:#1C1917; --ink-2:#57504A; --ink-3:#7A716A;
+  --paper:#FAF7F2; --surface:#FFFFFF; --surface-2:#F4F0E8;
+  --line:#E7E0D6; --line-strong:#D5CBBB;
+  --band-a:#1C1917; --band-b:#3B322C; --band-em:#F5A524;
+  --band-glow:rgba(245,165,36,.2);
+  --umber:#1C1917; --umber-2:#332C26;
+}
+
+/* ---- 03 Marigold & Deep Red ---- */
+:root[data-palette="marigold"]{
+  --clay:#9F1239; --clay-deep:#4C0519; --clay-ink:#9F1239; --clay-soft:#FDECEF;
+  --honey:#F59E0B; --honey-ink:#92400E; --honey-soft:#FEF3E2;
+  --ink:#4C0519; --ink-2:#6E4050; --ink-3:#8C6472;
+  --paper:#FFF8ED; --surface:#FFFFFF; --surface-2:#FDF1E4;
+  --line:#F2E2D8; --line-strong:#E2CBBE;
+  --band-a:#9F1239; --band-b:#4C0519; --band-em:#FCD34D;
+  --band-glow:rgba(245,158,11,.28);
+  --umber:#4C0519; --umber-2:#64122C;
+}
+
+/* ---- 04 Copper & Bronze ---- */
+:root[data-palette="copper"]{
+  --clay:#B45309; --clay-deep:#54200A; --clay-ink:#92400E; --clay-soft:#FBEFDD;
+  --honey:#FBBF24; --honey-ink:#92400E; --honey-soft:#FDF3E0;
+  --ink:#292524; --ink-2:#5F544D; --ink-3:#82756C;
+  --paper:#FAF5EF; --surface:#FFFFFF; --surface-2:#F5EDE3;
+  --line:#E9DFD3; --line-strong:#D8C9B8;
+  --band-a:#B45309; --band-b:#54200A; --band-em:#FBBF24;
+  --band-glow:rgba(251,191,36,.26);
+  --umber:#292524; --umber-2:#3D352F;
+}
+
+/* ---- 05 Saffron & Teak ---- */
+:root[data-palette="saffron"]{
+  --clay:#C2410C; --clay-deep:#4A2C17; --clay-ink:#9A5B08; --clay-soft:#FBEBD5;
+  --honey:#D97706; --honey-ink:#8A4A05; --honey-soft:#FBEBD5;
+  --ink:#3B2413; --ink-2:#6B5340; --ink-3:#8B7359;
+  --paper:#FDF4E3; --surface:#FFFFFF; --surface-2:#F8ECD9;
+  --line:#EEDFC8; --line-strong:#DCC8A9;
+  --band-a:#E8590C; --band-b:#4A2C17; --band-em:#FFE08A;
+  --band-glow:rgba(255,224,138,.24);
+  --umber:#3B2413; --umber-2:#4F3320;
+}
+
+/* ---- 06 Chilli & Cream ---- */
+:root[data-palette="chilli"]{
+  --clay:#B91C1C; --clay-deep:#450A0A; --clay-ink:#991B1B; --clay-soft:#FDEAE6;
+  --honey:#F59E0B; --honey-ink:#92400E; --honey-soft:#FEF3E2;
+  --ink:#450A0A; --ink-2:#6B4238; --ink-3:#8A5C50;
+  --paper:#FEF7ED; --surface:#FFFFFF; --surface-2:#FCEFE2;
+  --line:#F3E3D6; --line-strong:#E5CBBA;
+  --band-a:#B91C1C; --band-b:#450A0A; --band-em:#FCD34D;
+  --band-glow:rgba(252,211,77,.24);
+  --umber:#450A0A; --umber-2:#5E1414;
+}
+
+/* ---- dark variants ------------------------------------------------------
+   Written twice, matching how site.css structures its tokens: once behind the
+   OS preference, once behind an explicit data-theme, so neither can strand
+   the other. Only hues change; the warm dark shell comes from site.css.
+   ---------------------------------------------------------------------- */
+@media (prefers-color-scheme:dark){
+  :root[data-palette="amber"]:not([data-theme="light"]){
+    --clay:#F5A524; --clay-deep:#D98806; --clay-ink:#FFCF6B; --clay-soft:#3A2A0C;
+    --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+    --band-a:#2A2420; --band-b:#16120F; --band-em:#F5A524;
+    --band-glow:rgba(245,165,36,.18); --umber:#2A2420; --umber-2:#3A322C;
+  }
+  :root[data-palette="marigold"]:not([data-theme="light"]){
+    --clay:#FB7185; --clay-deep:#E11D48; --clay-ink:#FDA4B8; --clay-soft:#3E0A1A;
+    --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+    --band-a:#6B0F2A; --band-b:#37060F; --band-em:#FCD34D;
+    --band-glow:rgba(251,191,36,.2); --umber:#3E0A1A; --umber-2:#52122A;
+  }
+  :root[data-palette="copper"]:not([data-theme="light"]){
+    --clay:#D97706; --clay-deep:#B45309; --clay-ink:#FBBF24; --clay-soft:#3A2810;
+    --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+    --band-a:#6B3308; --band-b:#331504; --band-em:#FBBF24;
+    --band-glow:rgba(251,191,36,.22); --umber:#2E2823; --umber-2:#3E3730;
+  }
+  :root[data-palette="saffron"]:not([data-theme="light"]){
+    --clay:#F97316; --clay-deep:#C2410C; --clay-ink:#FDBA8C; --clay-soft:#3A2210;
+    --honey:#E8930C; --honey-ink:#FFC961; --honey-soft:#3A2A0C;
+    --band-a:#6B3D1A; --band-b:#2E1B0C; --band-em:#FFE08A;
+    --band-glow:rgba(255,224,138,.2); --umber:#33240F; --umber-2:#45311A;
+  }
+  :root[data-palette="chilli"]:not([data-theme="light"]){
+    --clay:#EF4444; --clay-deep:#B91C1C; --clay-ink:#FCA5A5; --clay-soft:#3E1212;
+    --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+    --band-a:#7F1D1D; --band-b:#3B0A0A; --band-em:#FCD34D;
+    --band-glow:rgba(252,211,77,.2); --umber:#3B0A0A; --umber-2:#511616;
+  }
+}
+:root[data-theme="dark"][data-palette="amber"]{
+  --clay:#F5A524; --clay-deep:#D98806; --clay-ink:#FFCF6B; --clay-soft:#3A2A0C;
+  --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+  --band-a:#2A2420; --band-b:#16120F; --band-em:#F5A524;
+  --band-glow:rgba(245,165,36,.18); --umber:#2A2420; --umber-2:#3A322C;
+}
+:root[data-theme="dark"][data-palette="marigold"]{
+  --clay:#FB7185; --clay-deep:#E11D48; --clay-ink:#FDA4B8; --clay-soft:#3E0A1A;
+  --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+  --band-a:#6B0F2A; --band-b:#37060F; --band-em:#FCD34D;
+  --band-glow:rgba(251,191,36,.2); --umber:#3E0A1A; --umber-2:#52122A;
+}
+:root[data-theme="dark"][data-palette="copper"]{
+  --clay:#D97706; --clay-deep:#B45309; --clay-ink:#FBBF24; --clay-soft:#3A2810;
+  --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+  --band-a:#6B3308; --band-b:#331504; --band-em:#FBBF24;
+  --band-glow:rgba(251,191,36,.22); --umber:#2E2823; --umber-2:#3E3730;
+}
+:root[data-theme="dark"][data-palette="saffron"]{
+  --clay:#F97316; --clay-deep:#C2410C; --clay-ink:#FDBA8C; --clay-soft:#3A2210;
+  --honey:#E8930C; --honey-ink:#FFC961; --honey-soft:#3A2A0C;
+  --band-a:#6B3D1A; --band-b:#2E1B0C; --band-em:#FFE08A;
+  --band-glow:rgba(255,224,138,.2); --umber:#33240F; --umber-2:#45311A;
+}
+:root[data-theme="dark"][data-palette="chilli"]{
+  --clay:#EF4444; --clay-deep:#B91C1C; --clay-ink:#FCA5A5; --clay-soft:#3E1212;
+  --honey:#FBBF24; --honey-ink:#FCD34D; --honey-soft:#3B2A0C;
+  --band-a:#7F1D1D; --band-b:#3B0A0A; --band-em:#FCD34D;
+  --band-glow:rgba(252,211,77,.2); --umber:#3B0A0A; --umber-2:#511616;
+}
+
+/* ============================================================================
+   The switcher control itself
+   ========================================================================== */
+.tsw{position:fixed;right:1rem;bottom:1rem;z-index:85;font-family:var(--mono)}
+
+.tsw-btn{
+  display:flex;align-items:center;gap:.5rem;cursor:pointer;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);
+  border-radius:999px;padding:.55rem .9rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:var(--shadow-lift);
+  transition:transform .14s ease,border-color .16s ease;
+}
+.tsw-btn:hover{transform:translateY(-2px);border-color:var(--clay)}
+.tsw-btn .bead{
+  width:13px;height:13px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--band-a),var(--honey));
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);
+}
+
+.tsw-panel{
+  position:absolute;right:0;bottom:calc(100% + .6rem);width:234px;
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);
+  box-shadow:var(--shadow-lift);padding:.85rem;display:grid;gap:.4rem;
+}
+.tsw-panel[hidden]{display:none!important}
+.tsw-panel h4{
+  margin:0 0 .15rem;font-family:var(--mono);font-weight:500;font-size:.64rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+}
+
+.tsw-opt{
+  display:flex;align-items:center;gap:.6rem;width:100%;cursor:pointer;text-align:left;
+  background:none;border:1px solid transparent;border-radius:var(--r-sm);
+  padding:.4rem .45rem;font-family:var(--sans);font-size:.85rem;font-weight:600;
+  color:var(--ink-2);transition:background .13s ease,color .13s ease;
+}
+.tsw-opt:hover{background:var(--surface-2);color:var(--ink)}
+.tsw-opt[aria-pressed="true"]{border-color:var(--clay);color:var(--ink);background:var(--clay-soft)}
+.tsw-opt .sw{
+  width:22px;height:22px;border-radius:6px;flex:none;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.16);
+}
+
+.tsw-note{
+  font-size:.68rem;line-height:1.45;color:var(--ink-3);
+  border-top:1px solid var(--line);padding-top:.5rem;margin:.2rem 0 0;
+}
+
+@media (max-width:520px){
+  .tsw{right:.65rem;bottom:.65rem}
+  .tsw-btn .lbl{display:none}
+  .tsw-panel{width:min(76vw,234px)}
+}
+@media print{.tsw{display:none}}

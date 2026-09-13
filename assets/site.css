@@ -624,42 +624,6 @@ footer.site .fine{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba
   76%,100%{opacity:0;transform:translate(120%,0) scale(.95)}
 }
 
-/* Coverage sweep — a camera panning its arc, with detection rings. */
-.sweep{position:relative;width:min(330px,80%);aspect-ratio:1;margin:0 auto}
-.sweep-ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--band-line)}
-.sweep-ring.r2{inset:17%}
-.sweep-ring.r3{inset:34%}
-.sweep-cone{
-  position:absolute;inset:0;border-radius:50%;transform-origin:50% 50%;
-  background:conic-gradient(from -34deg,rgba(245,158,11,.5),rgba(245,158,11,.06) 42deg,transparent 68deg);
-  -webkit-mask:radial-gradient(circle,transparent 15%,#000 16%);
-  mask:radial-gradient(circle,transparent 15%,#000 16%);
-  animation:sweep 7s cubic-bezier(.45,0,.55,1) infinite alternate;
-}
-@keyframes sweep{from{transform:rotate(-56deg)}to{transform:rotate(56deg)}}
-.sweep-pulse{
-  position:absolute;inset:0;border-radius:50%;border:1px solid var(--honey);
-  opacity:0;animation:pulseOut 7s ease-out infinite;
-}
-.sweep-pulse.p2{animation-delay:2.3s}
-.sweep-pulse.p3{animation-delay:4.6s}
-@keyframes pulseOut{
-  0%{transform:scale(.16);opacity:.75}
-  70%{opacity:0}
-  100%{transform:scale(1);opacity:0}
-}
-.sweep-cam{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
-  background:var(--honey);color:#2A1508;box-shadow:0 10px 26px -8px rgba(0,0,0,.55);
-}
-.sweep-cam svg{width:28px;height:28px}
-.sweep-label{
-  position:absolute;left:50%;bottom:-2.1rem;transform:translateX(-50%);white-space:nowrap;
-  font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--band-fg-3);
-}
-
 /* Hero on the CCTV page splits to make room for the sweep. */
 .hero-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
   gap:3rem;align-items:center}
@@ -669,7 +633,6 @@ footer.site .fine{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba
 }
 
 @media (prefers-reduced-motion:reduce){
-  .tile .edge,.tile .motion,.sweep-cone,.sweep-pulse{animation:none}
+  .tile .edge,.tile .motion{animation:none}
   .tile .motion{opacity:1;transform:translate(48%,6%)}
-  .sweep-cone{transform:rotate(0deg)}
 }
