@@ -63,9 +63,44 @@ Shared files:
 | `assets/config.js` | **The one file to edit.** Business details. |
 | `assets/site.css` | All the styling — colours, type, layout, light and dark. |
 | `assets/site.js` | Shared behaviour. You shouldn't need to change this. |
+| `assets/effects.css` | The motion layer — reveals, painted headings, the CCTV scene. |
+| `assets/effects.js` | What drives that motion. Each part fails independently. |
+| `assets/themes.css` | **Temporary.** The five alternative palettes and the switcher's own styling. |
+| `assets/theme-switcher.js` | **Temporary.** Applies the saved palette and builds the switcher. |
 
 To change the look site-wide, edit the colour values at the top of `assets/site.css`.
 Everything else is built from those tokens.
+
+---
+
+## Choosing a colour theme
+
+There is a **Theme** button in the bottom-right corner of every page. It offers six
+warm palettes, and your choice is saved in your own browser — it is not saved to the
+site, so visitors always see whatever palette is set as the default in
+`assets/site.css`. Terracotta & Sand is currently that default.
+
+`themes.html` still shows all six side by side, which is useful for comparing them at
+a glance rather than one at a time.
+
+### Making a choice permanent, and removing the switcher
+
+Once a palette is settled on:
+
+1. If it is **not** Terracotta, open `assets/themes.css`, find that palette's block
+   (e.g. `:root[data-palette="copper"]`), and copy its values over the matching token
+   names in the `:root` block at the top of `assets/site.css`. Do the same for its dark
+   variant.
+2. Delete `assets/themes.css` and `assets/theme-switcher.js`.
+3. In each of the six pages, delete the two lines that load them from `<head>`:
+   ```html
+   <link rel="stylesheet" href="assets/themes.css">
+   <script src="assets/theme-switcher.js"></script>
+   ```
+4. Optionally delete `themes.html` too.
+
+Nothing else references either file, and the switcher builds its own markup from
+script, so there is no leftover HTML to hunt down.
 
 ---
 
